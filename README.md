@@ -1,5 +1,5 @@
 # w9yt.org source
-Source code for the Badger Amateur Radio Society's self-hosted website and portal for various resources available to students, faculty, and community members. The Badger Amateur Radio Society (W9YT) is a registered student organization at the University of Wisconsin - Madison, furthering the art of amateur radio for any and all interested parties.
+Source for the Badger Amateur Radio Society's website for various resources available to students, faculty, and community members. The Badger Amateur Radio Society (W9YT) is a registered student organization at the University of Wisconsin - Madison, furthering the art of amateur radio for any and all interested parties.
 
 # Purpose
 W9YT BARS is a historic amateur radio club located on the University of Wisconsin - Madison campus, under the College of Engineering's 
@@ -8,7 +8,7 @@ to provide the opportunity to learn about and interact with amateur radio as a h
 operating skills and test equipment, and to provide a recreational connection to scientific concepts UW-Madison students and faculty interact
 with on a regular basis. 
 
-The club website - w9yt.org - acts as a central location for club resources, announcements, communications, and any other information 
+The club website - [w9yt.org](https://www.w9yt.org) - acts as a central location for club resources, announcements, communications, and any other information 
 pertinent to the day-to-day functioning of the club. The aim of this development is to create an accessible, appealing, and professional
 website to represent the club to any and all interested parties around the world.
 
@@ -17,12 +17,12 @@ archival activities (specifically concerning our QSL card collection). We hope t
 
 
 # License information 
-Included within the respository for this site is a license file detailing the specific usage rights of BARS W9YT source code. For conveince, 
-a mirror of this file is available below. The LICENSE file superscedes any usage rights outlined herein, and it is the end-user's responsibility 
+Included within the repository for this site is a license file detailing the specific usage rights of BARS W9YT source code. For convince, 
+a mirror of this file is available below. The LICENSE file supersedes any usage rights outlined herein, and it is the end-user's responsibility 
 to ensure that this file is reflective of current permissions outlined therein. 
 > MIT License
 > 
-> Copyright (c) 2026 skylar-NQ9Z
+> Copyright (c) 2026 Badger Amateur Radio Society
 > 
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal
