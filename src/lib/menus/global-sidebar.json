@@ -1,0 +1,45 @@
+[
+    {
+        "label": "Community",
+        "items": [
+            {
+                "text": "About BARS",
+                "link": "/history/"
+            },            
+            {
+                "text": "W9YT Repeaters",
+                "link": "/repeaters/"
+            },
+            {
+                "text": "History",
+                "link": "/w9yt-history/"
+            }
+        ]
+    },
+    {
+        "label": "Students",
+        "items": [
+            {
+                "text": "Joining BARS",
+                "link": "/getting-started/"
+            },
+            {
+                "text": "Leadership",
+                "link": "/people/"
+            },
+            {
+                "text": "The Shack",
+                "link": "/room-1601/"
+            }
+        ]
+    },
+    {
+        "label": "Support",
+        "items": [
+            {
+                "text": "Donate",
+                "link": "/charitable-giving/"
+            }
+        ]
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "text": "About",
+        "link": "/history/"
+    },
+    {
+        "text": "Join",
+        "link": "/getting-started/"
+    },
+    {
+        "text": "Donate",
+        "link": "/charitable-giving/"
+    }
+]

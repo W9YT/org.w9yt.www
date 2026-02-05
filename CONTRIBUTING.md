@@ -1,3 +1,5 @@
+This project is built with [Sveltekit](https://svelte.dev/) with two UI frameworks [Tailwind](https://tailwindcss.com/) and [Skeleton](https://www.skeleton.dev/docs/svelte/get-started/introduction)
+
 ## Contributing
 
 Start a development server:
