@@ -1,21 +1,94 @@
-MIT License
+BARS v0 License
 
-Copyright (c) 2026 skylar-NQ9Z
+  The BARS v0 license is a license permitting use of information with 
+restrictions on Source Form, commercial usage, trademarks, and imagery.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+  The precise terms and conditions for copying, distribution and
+modification follow. The following terms supersede the above preamble.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+                       LICENSE CONDITIONS
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Copyright (c) 2026 Badger Amateur Radio Society
+
+Distribution of a Larger Work.
+
+  You may create and distribute a Larger Work under terms of Your choice,
+provided that (1) You also comply with the requirements of this License for
+the Software, (2) the Larger Work only utilizes Software or information 
+rendered after a normative compile process, and (3) does not utilize 
+the Source Form. 
+
+Larger Works must remain publicly available to the same or greater 
+degree of this Software. The Badger Amateur Radio Society logo, icon, 
+and branding may not be included in Larger Works, except as required 
+for reasonable and customary use in describing the origin of the 
+Work and reproducing the content of the LICENSE file.
+
+Commercial Usage.
+
+  Any Larger Work may not be for commercial purposes. 
+  
+Distribution of Compiled Form.
+
+  You may not copy, modify, publish, use, compile, sell, distribute, 
+or otherwise replicate the Compiled Form of this Software without 
+substantive modifications, additions, or commentary.
+
+Distribution of Source Form.
+
+  You may not copy, modify, publish, use, compile, sell, distribute, 
+or otherwise replicate the Source Form of this Software except for 
+the limited purpose of preparing and submitting contributions 
+to the Licensor’s original repository. Such replications must 
+be publicly accessible forks of the Software.
+
+Trademarks.
+
+  This License does not grant permission to use the trade
+names, trademarks, service marks, or product names of the Licensor,
+except as required for reasonable and customary use in describing the
+origin of the Work and reproducing the content of the LICENSE file.
+
+You may not remove or alter the substance of any license notices
+(including copyright notices, patent notices, disclaimers of warranty,
+or limitations of liability) contained within the Source Code Form of
+the Software, except that You may alter any license notices to
+the extent required to remedy known factual inaccuracies.
+
+The above copyright notice and this permission notice shall be 
+included in all Larger Works or derivations of the Software.
+
+
+Disclaimer of Warranty.
+
+  THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
+APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
+HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY
+OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
+IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
+ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+Limitation of Liability.
+
+  IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
+THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
+GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
+USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
+DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
+PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
+EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES.
+
+Interpretation of Disclaimer of Warranty and Limitation of Liability.
+
+  If the disclaimer of warranty and limitation of liability provided
+above cannot be given local legal effect according to their terms,
+reviewing courts shall apply local law that most closely approximates
+an absolute waiver of all civil liability in connection with the
+Program, unless a warranty or assumption of liability accompanies a
+copy of the Program in return for a fee.
+
+                    END LICENSE CONDITIONS

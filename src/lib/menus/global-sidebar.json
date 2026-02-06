@@ -4,15 +4,19 @@
         "items": [
             {
                 "text": "About BARS",
-                "link": "/history/"
+                "link": "/about/"
             },            
             {
                 "text": "W9YT Repeaters",
                 "link": "/repeaters/"
             },
             {
-                "text": "History",
-                "link": "/w9yt-history/"
+                "text": "News & Events",
+                "link": "/news-events/"
+            },
+            {
+                "text": "Contact",
+                "link": "/contact/"
             }
         ]
     },
@@ -25,11 +29,28 @@
             },
             {
                 "text": "Leadership",
-                "link": "/people/"
+                "link": "/leadership/"
             },
             {
                 "text": "The Shack",
                 "link": "/room-1601/"
+            }
+        ]
+    },
+    {
+        "label": "History",
+        "items": [
+            {
+                "text": "Founding of W9YT (Laun)",
+                "link": "/history/founding-w9yt-laun/"
+            },
+            {
+                "text": "Founding of W9YT (Dubberstein)",
+                "link": "/history/founding-w9yt-dubberstein/"
+            },
+            {
+                "text": "W6FQZ Memories",
+                "link": "/history/w6fqz-memories/"
             }
         ]
     },

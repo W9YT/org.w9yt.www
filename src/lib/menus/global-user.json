@@ -5,7 +5,7 @@
     },
     {
         "text": "Manage Account",
-        "link": "/manage-account-no-robot/"
+        "link": "/.well-known/manage-account-no-robot.html"
     },
     {
         "text": "CampusLabs",

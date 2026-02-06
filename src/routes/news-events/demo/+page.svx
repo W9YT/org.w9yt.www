@@ -1,0 +1,69 @@
+---
+Title: We Have Demo Popcorn!
+Published: 2026-02-01 21:15
+Author: Hadley So
+Excerpt: A short summary of what this page is about, required to pass build
+Hidden: true
+
+---
+
+# Big One
+
+A bit too big, avoid when possible!
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
+lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel 
+class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+Links also work, just add [brackets](https://example.com) and parenthesis.
+
+
+## Big Two
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
+lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel 
+class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+### Big Three
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
+In id cursus mi pretium tellus duis convallis. 
+
+Lists are useful too:
+* Use an asterisk to show items in bullet point
+* Next items
+
+Or use numbers to have a numbered list
+1. The numbers don't really matter
+2. I can repeat several
+2. and it will fix it
+
+Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
+lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel 
+class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+#### Big Four
+
+A fourth level heading with `####` is just slightly bigger than regular text.
+
+### Show Some Code
+
+Use three back ticks to show code in a block. The indent inside the ticks does show in the rendered page.
+
+```py
+    text = input('Type a number, and its factorial will be printed: ')
+    n = int(text)
+
+    if n < 0:
+        
+    raise ValueError('You must enter a non-negative integer')
+
+    factorial = 1
+    for i in range(2, n + 1):
+        
+    factorial *= i
+
+    print(factorial)
+```
