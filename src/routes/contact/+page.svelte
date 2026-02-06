@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { ArrowRightIcon, Mail } from '@lucide/svelte';
+	import { ArrowRightIcon, Mail, Facebook, Twitter } from '@lucide/svelte';
 
 	import { Tabs } from '@skeletonlabs/skeleton-svelte';
 	import type { HTMLAnchorAttributes } from 'svelte/elements';
@@ -19,18 +19,28 @@
 </svelte:head>
 
 
-<div class="mx-auto max-w-3xl pt-10 text-lg px-5">
+<div class="mx-auto max-w-5xl pt-10 text-lg px-5">
 
-	<h2 class="text-4xl/15 pb-10 font-semibold">
+	<h2 class="text-4xl/9 md:text-4xl/15 pb-10 font-semibold">
 		Contact the Badger Amateur Radio Society
 	</h2>
 	
 
 	<Tabs value={current} onValueChange={(details) => (current = details.value)}>
-		<Tabs.List>
+		<Tabs.List class="overflow-x-scroll scrollbarHide">
 			<Tabs.Trigger value="#officers">
 				{#snippet element(attributes)}
 					<a {...attributes as HTMLAnchorAttributes} href="#officers">The Officers</a>
+				{/snippet}
+			</Tabs.Trigger>
+			<Tabs.Trigger value="#socials">
+				{#snippet element(attributes)}
+					<a {...attributes as HTMLAnchorAttributes} href="#socials">Social Media</a>
+				{/snippet}
+			</Tabs.Trigger>
+			<Tabs.Trigger value="#web">
+				{#snippet element(attributes)}
+					<a {...attributes as HTMLAnchorAttributes} href="#web">Website Issues</a>
 				{/snippet}
 			</Tabs.Trigger>
 			<Tabs.Trigger value="#ece">
@@ -54,8 +64,8 @@
 				<Mail size={18} />
 			</button>
 
-			<p class="pb-2 pt-4">
-				For items larger than a standard US first class letter:
+			<p class="pb-2 pt-10">
+				For items larger than standard US first class letters:
 			</p>
 			<p class="pb-2">
 				<code>
@@ -78,6 +88,25 @@
 				</code>
 			</p>
 
+		</Tabs.Content>
+		<Tabs.Content value="#socials">
+			<p class="pb-2">
+				The Badger Amateur Radio Society is also on the following socials:
+			</p>
+			<button type="button" class="btn preset-filled mt-1" onclick={e => location.href="https://www.facebook.com/w9ytbars"}>
+				<span>W9YTBARS</span>
+				<Facebook size={18} />
+			</button>
+			<button type="button" class="btn preset-filled mt-1" onclick={e => location.href="http://www.twitter.com/W9YT"}>
+				<span>W9YT</span>
+				<Twitter size={18} />
+			</button>
+		</Tabs.Content>
+		<Tabs.Content value="#web">
+			<p class="pb-2">
+				You can email the webmaster <span class="select-all">webmaster@w9yt.org</span>
+				or contact the <button type="button" onclick={e => location.href="https://hadleyso.com/?ref=www.w9yt.org&utm_source=www.w9yt.org"} class="underline">site provider</button>
+			</p>
 		</Tabs.Content>
 		<Tabs.Content value="#ece">
 			<p class="pb-2">

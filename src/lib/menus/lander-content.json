@@ -1,20 +1,20 @@
 [
     {
         "pretext": "Announcements",
-        "title": "Title of News One",
-        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aspernatur provident eveniet eligendi cumque consequatur tempore sint nisi sapiente. Iste beatae laboriosam iure molestias cum expedita architecto itaque quae rem.",
-        "link": "/about/"
+        "title": "February 2026 School Club Round Up!",
+        "body": "School Club Roundup (SCR) is from February 9th to 13th! There are two School Club Roundups during each school year in October and February. The contest is Monday through Friday from 1300 UTC Monday through 2359 UTC Friday",
+        "link": "https://www.arrl.org/school-club-roundup"
     },
     {
         "pretext": "Announcements",
-        "title": "Title of News One",
-        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aspernatur provident eveniet eligendi cumque consequatur tempore sint nisi sapiente. Iste beatae laboriosam iure molestias cum expedita architecto itaque quae rem.",
-        "link": "/about/"
+        "title": "License Exams by FLARC",
+        "body": "Saturday, February 7th is the semester's first FCC license exam run by The Four Lakes Amateur Radio Club. They are on the first Saturday of each month at Space Place, in the Villager Mall. Click to learn more.",
+        "link": "https://w9jz.org/exam/"
     },
     {
         "pretext": "Announcements",
-        "title": "Title of News One",
-        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aspernatur provident eveniet eligendi cumque consequatur tempore sint nisi sapiente. Iste beatae laboriosam iure molestias cum expedita architecto itaque quae rem.",
-        "link": "/about/"
+        "title": "Spring 2026 Meetings",
+        "body": "Meetings for Spring 2026 are every Tuesday at 4PM in the Shack. Click the join button above to get on the roster. To get directions to the Shack in the Engineering Research Building click on this card!",
+        "link": "/room-1601/"
     }
 ]

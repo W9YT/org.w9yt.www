@@ -13,7 +13,7 @@
 </svelte:head>
 
 <div class="mx-auto max-w-3xl px-5 pt-10 text-lg font-light">
-	<h2 class="pb-10 text-4xl/15 font-semibold">Founding of W9YT</h2>
+	<h2 class="pb-10 text-4xl/9 md:text-4xl/15 font-semibold">Founding of W9YT</h2>
 
 	<p class="py-4 font-normal italic">
 		Published in The Badger State Smoke Signals - April 1983 issue

@@ -2,6 +2,7 @@
 Title: 2019 Fall School Club Roundup
 Published: 2019-10-17 09:30
 Author: Tim Czerwonka
+ProfileTag: Czerwonka
 Excerpt: The 2019 ARRL School Club Roundup (SCR) will be held October 21-25 2019
 
 ---

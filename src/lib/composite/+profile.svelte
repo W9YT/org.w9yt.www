@@ -14,27 +14,27 @@
         urlResearch = "",
         address = "",
         email = "",
-        phone = ""
+        phone = "",
 	} = $props();
     let initials = $derived(name.split(" ").map(word => word[0]).join("").toUpperCase());
     let emailList = $derived(email.split(","));
 </script>
 
-<div class="inline-flex  p-2">
+<div class="inline-flex p-2">
 
     <Popover>
         <Popover.Trigger>
-            <div class="block max-w-sm overflow-hidden card border-[1px] border-surface-200-800 preset-filled-surface-100-900 card-hover">
+            <div class="block max-w-sm overflow-hidden card border-[1px] border-surface-200-800 preset-filled-surface-100-900 card-hover min-w-80 max-w-screen md:min-w-fit">
                 
                 <article class="p-3">
-                    <section class="grid grid-cols-4 gap-8">
-                        <div class="col-span-4 md:col-span-1">
+                    <section class="grid grid-cols-4">
+                        <div class="col-span-1">
                             <Avatar class="size-17 relative">
                                 <Avatar.Image src={photo} alt="Profile Photo of {name}" />
                                 <Avatar.Fallback class="absolute inset-0 flex items-center justify-center">{initials}</Avatar.Fallback>
                             </Avatar>
                         </div>
-                        <div class="col-span-4 md:col-span-3 text-left">
+                        <div class="col-span-3 text-left pl-4">
                             <h2 class="font-medium text-2xl">{name}</h2>
                             <p class="opacity-75">{position}</p>
                         </div>
@@ -90,7 +90,12 @@
                                 {#each emailList as emailAddress}
                                     <a href="mailto:{emailAddress}">
                                         <button type="button" class="btn preset-filled mt-1">
-                                            <span class="text-sm">Email</span>
+                                            <span class="text-sm">
+                                                Email
+                                                {#if emailList.length > 1}
+                                                    ({emailAddress.split("@")[1]})
+                                                {/if}
+                                            </span>
                                             <Mail size={12} />
                                         </button>
                                     </a>

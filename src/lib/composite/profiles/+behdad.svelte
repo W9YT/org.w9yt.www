@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Profile from "../+profile.svelte";
 
+    let {position = "Faculty Advisor"} = $props()
 </script>
 
 
@@ -9,7 +10,7 @@
     name="Nader Behdad"
     salutation="(Professor)"
     department="Electrical & Computer Engineering; College of Engineering"
-    position="Faculty Advisor"
+    position={position}
     email="behdad@engr.wisc.edu"
     phone="(608) 262-8804"
     address="3438, Engineering Hall

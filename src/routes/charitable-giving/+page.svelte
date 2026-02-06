@@ -13,15 +13,15 @@
 </svelte:head>
 
 <div class="mx-auto max-w-3xl px-5 pt-10 text-lg">
-	<h2 class="pb-10 text-4xl/15 font-semibold">Donating and Charitable Giving</h2>
+	<h2 class="pb-10 text-4xl/9 md:text-4xl/15 font-semibold">Donating and Charitable Giving</h2>
 
 	<p class="py-4">
-		For your convenience, The Badger Amateur Radio Society has setup an online donation system with
+		For your convenience, The Badger Amateur Radio Society has an online donation system with
 		the UW Foundation. The online form allows you to make a tax deductible donation using a credit
 		card.
 	</p>
 	<p class="py-4">
-		Below you will find a link titled “Make a donation now.” After following this link, you will be
+		Below you will find a button titled "Donate Now". After following this button, you will be
 		taken to the UW Foundations website.
 	</p>
 	<p class="py-4">

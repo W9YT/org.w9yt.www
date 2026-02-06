@@ -16,7 +16,7 @@
 
 <div class="mx-auto max-w-3xl pt-10 text-lg px-5">
 
-	<h2 class="text-4xl/15 pb-10 font-semibold">
+	<h2 class="text-4xl/9 md:text-4xl/15 pb-10 font-semibold">
 		Joining the Badger Amateur Radio Society
 	</h2>
 
@@ -25,7 +25,8 @@
 	</h2>
 	
 	<p class="py-4">
-		Visit our WIN page to add yourself to the roster, and join the Discord.
+		Visit our WIN page to add yourself to the roster, and join the Discord. 
+		Meetings for Spring 2026 are every Tuesday at 4PM in <a class="underline" href="/room-1601/">the Shack</a>.
 	</p>
 	<a href="https://win.wisc.edu/organization/bars" target="_blank">
 		<button type="button" class="btn preset-filled mt-1">

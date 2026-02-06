@@ -19,7 +19,9 @@ final URL.
 
 ### Menus
 
-All menus are in [src/lib/menus](src/lib/menus).
+All menus are in [src/lib/menus](src/lib/menus). To update the home page 
+card items, modify 
+[src/lib/menus/lander-content.json](src/lib/menus/lander-content.json)
 
 ### People Profiles
 

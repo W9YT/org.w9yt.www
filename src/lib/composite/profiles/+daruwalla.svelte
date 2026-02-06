@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Profile from "../+profile.svelte";
+    
     let {position = "Secretary / Treasurer "} = $props()
-
 </script>
 
 

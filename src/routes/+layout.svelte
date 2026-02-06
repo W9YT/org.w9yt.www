@@ -17,13 +17,25 @@
 
 	function globalMenuOnSelect(details: any) {
 		console.log(details);
-		goto(details.value);
+		if (details.value .includes("://")) {
+			window.location.href = details.value;
+		} else if (details.value.includes("mailto:")) {
+			window.location.href = details.value;
+		} else {
+			goto(details.value);
+		}
 	}
 </script>
 
 <svelte:head></svelte:head>
 
-<AppBar>
+<noscript>
+	<div class="min-w-screen bg-red-400 p-5 font-mono font-semibold sticky top-0">
+		This site requires JavaScript to function. Please enable JavaScript.	
+	</div>
+</noscript>
+
+<AppBar class="sticky top-0 z-5">
 	<AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
 
 		<AppBar.Lead>
@@ -43,10 +55,10 @@
 		</AppBar.Headline>
 		<AppBar.Trail>
 			<Menu onSelect={globalMenuOnSelect}>
-				<Menu.Trigger class="btn"><CircleUserIcon class="size-5" /></Menu.Trigger>
+				<Menu.Trigger class="btn" aria-label="Member Tools Menu"><CircleUserIcon class="size-5" aria-label="Icon of Generic User" /></Menu.Trigger>
 				<Portal>
 					<Menu.Positioner>
-						<Menu.Content>
+						<Menu.Content class="z-10">
 							<Menu.ItemGroup>
 								<Menu.ItemGroupLabel>Member Tools</Menu.ItemGroupLabel>
 								{#each menuUser as item}
@@ -63,10 +75,10 @@
 			</Menu>
 
 			<Menu onSelect={globalMenuOnSelect}>
-				<Menu.Trigger class="btn md:mr-3"><SvelteMenu class="size-6"/></Menu.Trigger>
+				<Menu.Trigger class="btn md:mr-3" aria-label="Open Menu"><SvelteMenu class="size-6" aria-label="Icon of Generic Three Line Menu" /></Menu.Trigger>
 				<Portal>
 					<Menu.Positioner>
-						<Menu.Content>
+						<Menu.Content class="z-10">
 							{#each menuSidebar as group, i}
 								<Menu.ItemGroup>
 									<Menu.ItemGroupLabel>{group.label}</Menu.ItemGroupLabel>
@@ -98,7 +110,7 @@
 
 
 <footer class="p-5 text-sm font-light max-w-500 mx-auto dark:text-gray-400">
-	<hr class="py-3">
+	<hr class="py-3 mt-35 md:mt-1">
 	<section class="max-w-7xl mx-auto">
 		
 		<p class="font-normal pb-2">

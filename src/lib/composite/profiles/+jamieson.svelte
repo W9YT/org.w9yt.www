@@ -1,11 +1,12 @@
 <script lang="ts">
 	import Profile from "../+profile.svelte";
 
+    let {position = "Secretary / Treasurer"} = $props()
 </script>
 
 
 <Profile
     name="Zachary Jamieson"
     department="Biological Systems Engineering; College of Agricultural & Life Sciences"
-    position="Secretary / Treasurer"
+    position={position}
 />

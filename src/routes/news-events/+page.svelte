@@ -2,11 +2,22 @@
 
 	function getPosts() {
 		const svxFiles = import.meta.glob('./**/+page.svx', { eager: true });
-		const posts = Object.entries(svxFiles).map(([path, mod]) => ({
-			path: path.slice(0, -'+page.svx'.length),
-			metadata: mod.metadata,
-			default: mod.default
-		}));
+
+		const posts = Object.entries(svxFiles).map(([path, mod]) => {
+			if (!mod.metadata?.Excerpt || mod.metadata.Excerpt.length < 20) {
+				throw new Error(`Excerpt too short in file: ${path}`);
+			}
+			if (!mod.metadata?.Title || !mod.metadata?.Published || !mod.metadata?.Author ) {
+				throw new Error(`Missing Title, Published, or Author in file: ${path}`);
+			}
+
+			return {
+				path: path.slice(0, -'+page.svx'.length),
+				metadata: mod.metadata,
+				default: mod.default
+			};
+		});
+
 
 		posts.sort((a, b) => {
 			const dateA = new Date(a.metadata.Published).getTime();

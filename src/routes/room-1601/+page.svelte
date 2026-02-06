@@ -13,7 +13,7 @@
 
 <div class="mx-auto max-w-3xl pt-10 text-lg px-5">
 
-	<h2 class="text-4xl/15 pb-10 font-semibold">
+	<h2 class="text-4xl/9 md:text-4xl/15 pb-10 font-semibold">
 		The "Shack"
 	</h2>
 	

@@ -2,6 +2,7 @@
 Title: We Have Demo Popcorn!
 Published: 2026-02-01 21:15
 Author: Hadley So
+ProfileTag: So
 Excerpt: A short summary of what this page is about, required to pass build
 Hidden: true
 
@@ -9,14 +10,17 @@ Hidden: true
 
 # Big One
 
-A bit too big, avoid when possible!
+A H1 heading with just one `#` is a bit too big, avoid when possible!
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. 
-In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
-lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel 
-class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+The `Hidden` meta attribute does not make the page private or hidden, as the git is public. It just 
+prevents the post from being listed on [/news-events/](/news-events)
 
-Links also work, just add [brackets](https://example.com) and parenthesis.
+Links also work, just add [brackets](https://example.com) and parenthesis like this `[brackets](https://example.com)`.
+
+If you want your profile to show up:
+1. Make your profile file in the `src/lib/composite/profiles` folder 
+2. Add it to `src/lib/composite/+profiles.svelte`
+3. Set the `ProfileTag` meta above
 
 
 ## Big Two

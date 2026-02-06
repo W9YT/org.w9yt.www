@@ -41,6 +41,10 @@
         "label": "History",
         "items": [
             {
+                "text": "QSL Card Archive",
+                "link": "https://bars-qsl.hadleyso.com/"
+            },
+            {
                 "text": "Founding of W9YT (Laun)",
                 "link": "/history/founding-w9yt-laun/"
             },
