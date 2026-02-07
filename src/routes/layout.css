@@ -18,3 +18,7 @@
 .scrollbarHide::-webkit-scrollbar { 
     display: none;  /* Older Safari and Chromium */
 }
+
+pre {
+    overflow-x: scroll;
+}

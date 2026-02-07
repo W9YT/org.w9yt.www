@@ -29,7 +29,7 @@
 	/>
 </svelte:head>
 
-<div class="mx-auto max-w-4xl px-5 pt-10 text-lg">
+<div class="mx-auto max-w-3xl px-5 pt-10 text-lg">
 	<h2 class="pb-10 text-4xl/9 md:text-4xl/15 font-semibold">Leadership</h2>
 
 	<Tabs value={yearSelect} onValueChange={(details) => (yearSelect = details.value)}>

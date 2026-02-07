@@ -12,6 +12,7 @@
 	import menuUser from '$lib/menus/global-user.json';
 	import menuSidebar from '$lib/menus/global-sidebar.json';
 	import { goto } from '$app/navigation';
+	import SiteProvider from '$lib/composite/+site-provider.svelte';
 
 	const currentYear = new Date().getFullYear();
 
@@ -123,9 +124,11 @@
 		<p class="pb-2">
 			The Badger Amateur Radio Society logo, icon, and branding is Copyright &copy; {currentYear} Badger Amateur Radio Society and may not be included in derived works.
 		</p>
-		<p>
-			<button type="button" onclick={e => location.href="https://hadleyso.com/?ref=www.w9yt.org&utm_source=www.w9yt.org"} class="underline">Site Provider</button>
-		</p>
+		<div class="flex space-x-2">
+			<SiteProvider uppercase={true}/> &emsp13;
+			<a class="underline" href="/privacy-policy/">Privacy Policy</a>
+		</div>
+
 
 	</section>
 

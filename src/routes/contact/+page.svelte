@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import SiteProvider from '$lib/composite/+site-provider.svelte';
 	import { ArrowRightIcon, Mail, Facebook, Twitter } from '@lucide/svelte';
 
 	import { Tabs } from '@skeletonlabs/skeleton-svelte';
@@ -55,9 +56,10 @@
 			</Tabs.Trigger>
 			<Tabs.Indicator />
 		</Tabs.List>
-		<Tabs.Content value="#officers">
+		<Tabs.Content value="#officers" class="mx-auto max-w-2xl">
 			<p class="pb-2">
-				You can email the officers of BARS at <span class="select-all">officers@w9yt.org</span>
+				You can email the officers of BARS at <span class="select-all">officers@w9yt.org</span>. 
+				<br>For individual contact information, visit our <a class="underline" href="/leadership/">leadership page</a>.
 			</p>
 			<button type="button" class="btn preset-filled mt-1" onclick={e => location.href="mailto:officers@w9yt.org"}>
 				<span>Contact Us</span>
@@ -89,7 +91,7 @@
 			</p>
 
 		</Tabs.Content>
-		<Tabs.Content value="#socials">
+		<Tabs.Content value="#socials" class="mx-auto max-w-2xl">
 			<p class="pb-2">
 				The Badger Amateur Radio Society is also on the following socials:
 			</p>
@@ -102,13 +104,13 @@
 				<Twitter size={18} />
 			</button>
 		</Tabs.Content>
-		<Tabs.Content value="#web">
+		<Tabs.Content value="#web" class="mx-auto max-w-2xl">
 			<p class="pb-2">
 				You can email the webmaster <span class="select-all">webmaster@w9yt.org</span>
-				or contact the <button type="button" onclick={e => location.href="https://hadleyso.com/?ref=www.w9yt.org&utm_source=www.w9yt.org"} class="underline">site provider</button>
+				or contact the <SiteProvider/>
 			</p>
 		</Tabs.Content>
-		<Tabs.Content value="#ece">
+		<Tabs.Content value="#ece" class="mx-auto max-w-2xl">
 			<p class="pb-2">
 				The Department of Electrical & Computer Engineering can be reached at:
 			</p>
@@ -120,7 +122,7 @@
 				<a href="mailto:contact-us@engr.wisc.edu">contact-us@engr.wisc.edu</a>
 			</p>
 		</Tabs.Content>
-		<Tabs.Content value="#uw-foundation">
+		<Tabs.Content value="#uw-foundation" class="mx-auto max-w-2xl">
 			<p class="pb-2">
 				The Badger Amateur Radio Society receives select funding from the University of Wisconsin Foundation.
 			</p>
