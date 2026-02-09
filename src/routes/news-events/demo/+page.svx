@@ -8,6 +8,10 @@ Hidden: true
 
 ---
 
+<script>
+    import image1 from '$lib/assets/news-events/demo/dan-begel-7DG9Q0Z2Bnk-unsplash.jpg'
+</script>
+
 # Big One
 
 A H1 heading with just one `#` is a bit too big, avoid when possible!
@@ -47,6 +51,19 @@ Or use numbers to have a numbered list
 Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla 
 lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel 
 class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+
+<img src={image1} alt="Building in sunset" />
+
+Photo by [Dan Begel](https://unsplash.com/@danbegel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/modern-building-with-balconies-and-autumn-foliage-7DG9Q0Z2Bnk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+      
+To include images, create a new folder under `src/lib/assets/news-events/` and place your images inside the folder.
+Then use the `<script>` section as above to import the image, and use `<img>` tag, remember to fill in the `alt` with an accessible description. 
+
+
+To make the images a max size use classes:
+
+<img src={image1} alt="Building in sunset" class="w-120" />
+
 
 #### Big Four
 

@@ -4,8 +4,8 @@
 </script>
 
 <svelte:head>
-	<meta property="og:title" content="Donate | Badger Amateur Radio Society" />
-	<title>Donate | Badger Amateur Radio Society</title>
+	<meta property="og:title" content="Donations and Charitable Giving | Badger Amateur Radio Society" />
+	<title>Donations and Charitable Giving | Badger Amateur Radio Society</title>
 	<meta
 		name="description"
 		content="Donating to The Badger Amateur Radio Society, the amateur radio club at the University of Wisconsin-Madison"
@@ -13,7 +13,7 @@
 </svelte:head>
 
 <div class="mx-auto max-w-3xl px-5 pt-10 text-lg">
-	<h2 class="pb-10 text-4xl/9 md:text-4xl/15 font-semibold">Donating and Charitable Giving</h2>
+	<h2 class="pb-10 text-4xl/9 md:text-4xl/15 font-semibold">Donations and Charitable Giving</h2>
 
 	<p class="py-4">
 		For your convenience, The Badger Amateur Radio Society has an online donation system with

@@ -21,6 +21,16 @@
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
+
+		<script>
+			const tgtHost = ["localhost", "127.0.0.1", "www.w9yt.com"];
+
+			if (!tgtHost.includes(location.hostname)) {
+				const u = new URL(location);
+				u.hostname = "www.w9yt.org";
+				window.location.href = u;
+			}
+		</script>
 		
 		%sveltekit.head%
 	</head>

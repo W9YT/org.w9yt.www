@@ -3,6 +3,7 @@
 	import './fonts.css';
 
 	let { children } = $props();
+	import { page } from '$app/state';
 
 	import { CircleUserIcon } from '@lucide/svelte';
 	import { Menu as SvelteMenu } from '@lucide/svelte';
@@ -28,7 +29,9 @@
 	}
 </script>
 
-<svelte:head></svelte:head>
+<svelte:head>
+	<link rel="canonical" href="https://www.w9yt.org{page.url.pathname}">
+</svelte:head>
 
 <noscript>
 	<div class="min-w-screen bg-red-400 p-5 font-mono font-semibold sticky top-0">

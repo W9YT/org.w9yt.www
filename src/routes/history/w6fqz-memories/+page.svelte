@@ -2,7 +2,7 @@
 </script>
 
 <svelte:head>
-	<meta property="og:title" content="W6FQX Memories| Badger Amateur Radio Society" />
+	<meta property="og:title" content="W6FQX Memories | Badger Amateur Radio Society" />
 	<title>W6FQX Memories | Badger Amateur Radio Society</title>
 	<meta
 		name="description"

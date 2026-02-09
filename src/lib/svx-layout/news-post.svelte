@@ -4,6 +4,9 @@
     export let Published;
     export let Excerpt;
     export let ProfileTag;
+    export let Hidden;
+
+    import { dev } from '$app/environment';
 
     const date = new Date(Published.replace(" ", "T")); 
     const isoWithOffset = date.toISOString().replace("Z", "+00:00");
@@ -13,6 +16,12 @@
 </script>
 
 <svelte:head>
+
+    {#if Hidden && !dev}
+            <meta name="robots" content="none" />
+            <meta property="og:title" content="Badger Amateur Radio Society" />
+            <title>Badger Amateur Radio Society</title>
+    {:else}
 	<meta property="og:title" content="{Title} | News & Events | Badger Amateur Radio Society" />
 	<title>{Title} | News & Events | Badger Amateur Radio Society</title>
 
@@ -23,7 +32,14 @@
 	/>
 
     <meta property="article:published_time" content="{isoWithOffset}"/>
+    {/if}
 </svelte:head>
+
+{#if Hidden && !dev}
+    <script>
+        window.location.replace("/news-events/")
+    </script>
+{:else}
 
 <div class="max-w-6xl mx-auto px-1">
 
@@ -77,3 +93,4 @@
     </section>
 
 </div>
+{/if}

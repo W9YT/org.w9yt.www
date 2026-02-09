@@ -2,8 +2,8 @@
 </script>
 
 <svelte:head>
-	<meta property="og:title" content="Founding of W9YT (Dubberstein)| Badger Amateur Radio Society" />
-	<title>Founding of W9YT (Dubberstein)| Badger Amateur Radio Society</title>
+	<meta property="og:title" content="Founding of W9YT (Dubberstein) | Badger Amateur Radio Society" />
+	<title>Founding of W9YT (Dubberstein) | Badger Amateur Radio Society</title>
 	<meta
 		name="description"
 		content="The founding of W9YT from the 1983 issue of The Badger State Smoke Signals"
