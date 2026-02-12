@@ -14,6 +14,7 @@
 	import menuSidebar from '$lib/menus/global-sidebar.json';
 	import { goto } from '$app/navigation';
 	import SiteProvider from '$lib/composite/+site-provider.svelte';
+	import Search from '$lib/composite/search/+page.svelte'
 
 	const currentYear = new Date().getFullYear();
 
@@ -27,6 +28,19 @@
 			goto(details.value);
 		}
 	}
+
+	let isSearchBarActive = $state(false);
+	let headlineClass = $state("");
+	let logoClass = $state("");
+	$effect(() => {
+		if (isSearchBarActive) {
+			headlineClass = "invisible";
+			logoClass = "invisible md:visible"
+		} else {
+			headlineClass = "";
+			logoClass = "";
+		}
+	});
 </script>
 
 <svelte:head>
@@ -43,13 +57,13 @@
 	<AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
 
 		<AppBar.Lead>
-			<a href="/">
+			<a href="/" class="{logoClass}">
 				<p class="text-2xl font-(family-name:--font-display) font-semibold tracking-widest px-2">W9YT</p>
 				<p class="text-xs font-(family-name:--font-display) font-medium px-2">Badger Amateur Radio Society</p>
 			</a>
 		</AppBar.Lead>
 		<AppBar.Headline class="flex justify-center">
-			<nav class="btn-group preset-outlined-primary-300-700 flex-col p-2 md:flex-row hidden md:block">
+			<nav class="btn-group preset-outlined-primary-300-700 flex-col p-2 md:flex-row hidden md:block {headlineClass}">
 				{#each menuGlobal as item}
 					<button type="button" class="btn capitalize hover:preset-filled" onclick={e => goto(item.link)}>
 						{item.text}
@@ -58,8 +72,9 @@
 			</nav>
 		</AppBar.Headline>
 		<AppBar.Trail>
+			<Search bind:isActive={isSearchBarActive} />
 			<Menu onSelect={globalMenuOnSelect}>
-				<Menu.Trigger class="btn" aria-label="Member Tools Menu"><CircleUserIcon class="size-5" aria-label="Icon of Generic User" /></Menu.Trigger>
+				<Menu.Trigger class="btn px-1 md:px-4" aria-label="Member Tools Menu"><CircleUserIcon class="size-5" aria-label="Icon of Generic User" /></Menu.Trigger>
 				<Portal>
 					<Menu.Positioner>
 						<Menu.Content class="z-10">
@@ -79,7 +94,7 @@
 			</Menu>
 
 			<Menu onSelect={globalMenuOnSelect}>
-				<Menu.Trigger class="btn md:mr-3" aria-label="Open Menu"><SvelteMenu class="size-6" aria-label="Icon of Generic Three Line Menu" /></Menu.Trigger>
+				<Menu.Trigger class="btn px-1 md:px-4 md:mr-3" aria-label="Open Menu"><SvelteMenu class="size-6" aria-label="Icon of Generic Three Line Menu" /></Menu.Trigger>
 				<Portal>
 					<Menu.Positioner>
 						<Menu.Content class="z-10">

@@ -22,3 +22,7 @@
 pre {
     overflow-x: scroll;
 }
+
+.globalSearchSnip .searchmatch {
+    background-color: #7297a9;
+}
