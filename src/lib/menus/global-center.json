@@ -10,5 +10,9 @@
     {
         "text": "Donate",
         "link": "/charitable-giving/"
+    },
+    {
+        "text": "Wiki",
+        "link": "https://wiki.w9yt.org/"
     }
 ]
