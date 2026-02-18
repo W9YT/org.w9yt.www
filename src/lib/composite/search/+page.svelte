@@ -40,7 +40,7 @@
 			return;
 		}
 
-		const url = "https://wiki.w9yt.org/api.php";
+		const url = "https://wiki.w9yt.org/service.do/search/";
 
 		const params = new URLSearchParams({
 			action: "query",
