@@ -65,9 +65,15 @@
 		<AppBar.Headline class="flex justify-center">
 			<nav class="btn-group preset-outlined-primary-300-700 flex-col p-2 md:flex-row hidden md:block {headlineClass}">
 				{#each menuGlobal as item}
-					<button type="button" class="btn capitalize hover:preset-filled" onclick={e => goto(item.link)}>
-						{item.text}
-					</button>
+					{#if item.link.startsWith("http")}
+						<button type="button" class="btn capitalize hover:preset-filled" onclick={e => window.location.href=item.link}>
+							{item.text}
+						</button>
+					{:else}
+						<button type="button" class="btn capitalize hover:preset-filled" onclick={e => goto(item.link)}>
+							{item.text}
+						</button>
+					{/if}
 				{/each}
 			</nav>
 		</AppBar.Headline>
