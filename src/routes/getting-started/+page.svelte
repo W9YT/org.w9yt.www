@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
-	import { GraduationCap, MessageCircleMore, Mail } from "@lucide/svelte";
+	import { GraduationCap, MessageCircleMore, Mail, ArrowRightIcon } from "@lucide/svelte";
 
 </script>
 
@@ -40,6 +40,16 @@
 		<span>Discord</span>
 		<MessageCircleMore size={18} />
 	</button>
+
+	<p class="py-1 mt-10">
+		Just learning about HAM radio? Read...
+	</p>
+	<a href="/getting-started/what-is-ham-radio/">
+		<button type="button" class="btn preset-filled-warning-200-800 mt-5">
+			<span>What is HAM Radio?</span>
+			<ArrowRightIcon size={18} />
+		</button>
+	</a>
 
 	<h2 class="text-2xl pt-10">
 		Community Members

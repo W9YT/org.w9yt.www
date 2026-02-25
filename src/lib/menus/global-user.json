@@ -8,6 +8,10 @@
         "link": "/.well-known/manage-account-no-robot.html"
     },
     {
+        "text": "Reset Email Password",
+        "link": "https://msspr.w9yt.org/"
+    },
+    {
         "text": "CampusLabs",
         "link": "https://win.wisc.edu/organization/bars"
     }
