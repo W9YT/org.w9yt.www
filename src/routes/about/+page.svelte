@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { ArrowRightIcon } from "@lucide/svelte";
+
 </script>
 
 <svelte:head>
@@ -34,4 +36,14 @@
 	<p>
 		We also operate several repeaters for the local Madison area, more on our <a href="/repeaters/" class="underline">repeaters page</a>.
 	</p>
+
+	<p class="py-1 mt-10">
+		Just learning about HAM radio? Read...
+	</p>
+	<a href="/getting-started/what-is-ham-radio/">
+		<button type="button" class="btn preset-filled-warning-200-800 mt-5">
+			<span>What is HAM Radio?</span>
+			<ArrowRightIcon size={18} />
+		</button>
+	</a>
 </div>
