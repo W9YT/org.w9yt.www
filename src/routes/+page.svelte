@@ -79,7 +79,7 @@
 			<h2 class="text-2xl font-bold tracking-tight md:text-3xl">
 				What is Ham radio?
 			</h2>
-			<p class="text-gray-600">
+			<p class="text-gray-600 dark:text-gray-200">
 				A hobby built on curiosity and connection, ham radio opens the door to a whole world of communication and experimentation.
 			</p>
 			<a
@@ -161,7 +161,7 @@
 	</Tabs>
 </section>	
 
-<section class="mx-5 lg:mx-auto max-w-7xl py-15 px-5 lg:px-15 mb-20  bg-(--theme-red-100)">
+<section class="mx-5 lg:mx-auto max-w-7xl py-15 px-5 lg:px-15 mb-20  bg-(--theme-red-100) dark:text-black">
 	<h2 class="text-2xl font-bold tracking-tight md:text-3xl">
 		Join us!
 	</h2>
