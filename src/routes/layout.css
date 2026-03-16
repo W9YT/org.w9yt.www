@@ -11,6 +11,33 @@
     --font-display: "FunnelDisplay", sans-serif;
 }
 
+:root {
+  /* Base */
+  --theme-red: #C5050C;
+
+  /* Lighter tints */
+  --theme-red-50:  #F9E5E6;
+  --theme-red-100: #F2BFC1;
+  --theme-red-200: #E9999B;
+  --theme-red-300: #E07375;
+  --theme-red-400: #D74D4F;
+
+  /* Base (500) */
+  --theme-red-500: #C5050C;
+
+  /* Darker shades */
+  --theme-red-600: #A40409;
+  --theme-red-700: #830307;
+  --theme-red-800: #620205;
+  --theme-red-900: #410103;
+
+  /* Alpha variants */
+  --theme-red-a10: rgba(197, 5, 12, 0.10);
+  --theme-red-a25: rgba(197, 5, 12, 0.25);
+  --theme-red-a50: rgba(197, 5, 12, 0.50);
+  --theme-red-a75: rgba(197, 5, 12, 0.75);
+}
+
 .scrollbarHide {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox, Safari 18.2+, Chromium 121+ */

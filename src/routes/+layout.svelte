@@ -134,21 +134,21 @@
 </section>
 
 
-<footer class="p-5 text-sm font-light max-w-500 mx-auto dark:text-gray-400">
+<footer class="p-5 text-sm font-light max-w-500 mx-auto dark:text-gray-400" data-nosnippet>
 	<hr class="py-3 mt-35 md:mt-1">
 	<section class="max-w-7xl mx-auto">
 		
-		<p class="font-normal pb-2">
+		<p class="font-normal pb-2" data-nosnippet>
 			Copyright &copy; {currentYear} Badger Amateur Radio Society and contributors. All rights reserved.
 		</p>
-		<p class="pb-2">
+		<p class="pb-2" data-nosnippet>
 			The Badger Amateur Radio Society (BARS) is a Wisconsin based 501(c)(3) non-profit. Bucky Badger and related marks are trademarks of the University of Wisconsin-Madison and are used under license. 
 			The Registered Student Organization (RSO) Badger Amateur Radio Society at the University of Wisconsin-Madison is governed by UW Policy UW-2002 and the Office of Student Conduct and Community Standards.
 		</p>
-		<p class="pb-2">
+		<p class="pb-2" data-nosnippet>
 			The Badger Amateur Radio Society logo, icon, and branding is Copyright &copy; {currentYear} Badger Amateur Radio Society and may not be included in derived works.
 		</p>
-		<div class="flex space-x-2">
+		<div class="flex space-x-2" data-nosnippet>
 			<SiteProvider uppercase={true}/> &emsp13;
 			<a class="underline" href="/privacy-policy/">Privacy Policy</a>
 		</div>
