@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { SearchIcon, X } from '@lucide/svelte';
+	import { ArrowLeft, SearchIcon, X } from '@lucide/svelte';
 	import { Combobox, Portal, type ComboboxRootProps, useListCollection, Tooltip } from '@skeletonlabs/skeleton-svelte';
 	import { tick } from 'svelte';
 
-	let {preOpen = false, isActive = $bindable(false) } = $props();
+	let {preOpen = false, isActive = $bindable(false), fullScreen = false } = $props();
 
 	const dataPrompt = [
 		{ label: 'Type to search', value: 'Type to search', snippet: "", size: 0, wordCount: 0 }
@@ -118,6 +118,9 @@
 		return 'hidden';
 	});
 
+	function close() {
+        isActive = false;
+    }
 
 	// svelte-ignore non_reactive_update
 	let wrapperClass = "relative";
@@ -146,6 +149,7 @@
 		<SearchIcon class="size-5" />
 	</button>
 
+	{#if !fullScreen}
 	<div class="{wrapperClass}">
 		<Combobox
 			class="{boxClass} max-w-sm min-w-2xs px-2 {hideSearchInput} bg-[var(--color-surface-100-900)]"
@@ -205,4 +209,86 @@
 			</Portal>
 		</Combobox>
 	</div>
+	{/if}
 </div>
+
+{#if isActive && fullScreen}
+	<!-- Search Panel -->
+
+	<div class="fixed inset-0 z-50 justify-center pt-1 lg:pt-24 animate-slide-down bg-[var(--color-surface-100-900)] px-2 lg:px-0">
+
+
+		<div class="lg:flex items-start w-screen lg:w-5/6 max-w-6xl mx-auto lg:pb-5">
+			<p class="text-2xl font-(family-name:--font-display) font-semibold tracking-widest p-3 lg:p-0 lg:my-3 flex space-between">
+				Search W9YT
+				<!-- Mobile Close Button -->
+				<button class="ml-auto lg:hidden text-right inline-block pr-3" onclick={close}>
+					<X class="size-5" />
+				</button>
+			</p>
+
+		</div>
+		
+		<div class="lg:flex items-start justify-center">
+				
+
+			<div class="flex items-center w-screen lg:w-5/6 max-w-full lg:max-w-6xl">
+
+				<Combobox
+					class="{hideSearchInput} bg-[var(--color-surface-100-900)] overflow-auto"
+					placeholder="Type to search Wiki..."
+					{collection}
+					{onOpenChange}
+					{onInputValueChange}
+					{onInteractOutside}
+					{onSelect}
+					onPointerDownOutside={onInteractOutside}
+					onFocusOutside={onInteractOutside}
+					inputBehavior="autohighlight"
+					selectionBehavior="clear"
+					value={selected}
+					onkeydown={(e) => {
+						if (e.key === 'Escape' && !preOpen) isActive = false;
+					}}
+				>
+					<Combobox.Control>
+						<Combobox.Input id="globalWikiSearchInput" />
+						<Combobox.Trigger />
+					</Combobox.Control>
+					<Portal>
+						<Combobox.Positioner class="fixed left-0 w-screen">
+							<Combobox.Content class="z-50 max-h-[80vh] overflow-y-auto">
+								{#each items as item (item.value)}
+									<Combobox.Item {item}>
+										<Combobox.ItemText>
+											<p class="text-lg font-semibold">
+												{item.label}
+											</p>
+											<p class="globalSearchSnip font-light">
+												{@html item.snippet}
+											</p>
+											<p class="text-xs pt-2">
+												Size: {item.size} - Word Count: {item.wordCount}
+											</p>
+										</Combobox.ItemText>
+									</Combobox.Item>
+								{/each}
+							</Combobox.Content>
+						</Combobox.Positioner>
+					</Portal>
+				</Combobox>
+
+				<!-- Close Button -->
+				<button class="btn btn-sm hidden lg:block" onclick={close}>
+					<X class="size-5" />
+				</button>
+			</div>
+		</div>
+
+		<button onclick={close} class="fixed inset-x-0 bottom-0 border-t border-border text-center py-3 lg:hidden">
+			Close
+		</button>
+
+	</div>
+
+{/if}
