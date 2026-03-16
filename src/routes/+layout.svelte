@@ -78,7 +78,7 @@
 			</nav>
 		</AppBar.Headline>
 		<AppBar.Trail>
-			<Search bind:isActive={isSearchBarActive} />
+			<Search bind:isActive={isSearchBarActive} fullScreen="true" />
 			<Menu onSelect={globalMenuOnSelect}>
 				<Menu.Trigger class="btn px-1 md:px-4" aria-label="Member Tools Menu"><CircleUserIcon class="size-5" aria-label="Icon of Generic User" /></Menu.Trigger>
 				<Portal>
