@@ -101,7 +101,7 @@
 		Read about how W9YT was founded from the perspective of two alumni K3ZO and K3ZO.
 	</p>
 
-	<Tabs value={current} onValueChange={(details) => (current = details.value)} class="pt-5">
+	<Tabs value={current} onValueChange={(details) => (current = details.value)} class="pt-5 lg:pt-12">
 		<Tabs.List class="overflow-x-scroll scrollbarHide">
 			<Tabs.Trigger value="#K3ZO">
 				{#snippet element(attributes)}
