@@ -145,8 +145,8 @@
 </script>
 
 <div class="pt-1">
-	<button type="button" class="btn px-1 md:px-4 {hideButton}" onclick={() => (isActive = true)}>
-		<SearchIcon class="size-5" />
+	<button type="button" class="btn px-1 md:px-4 {hideButton}" onclick={() => (isActive = true)} aria-label="Search W9YT">
+		<SearchIcon class="size-5" aria-hidden="true" />
 	</button>
 
 	{#if !fullScreen}

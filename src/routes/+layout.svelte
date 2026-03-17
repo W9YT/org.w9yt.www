@@ -4,6 +4,7 @@
 
 	let { children } = $props();
 	import { page } from '$app/state';
+	import ModeSwitch from '$lib/composite/ModeSwitch/+page.svelte';
 
 	import { CircleUserIcon } from '@lucide/svelte';
 	import { Menu as SvelteMenu } from '@lucide/svelte';
@@ -63,7 +64,7 @@
 			</a>
 		</AppBar.Lead>
 		<AppBar.Headline class="flex justify-center">
-			<nav class="btn-group preset-outlined-primary-300-700 flex-col p-2 md:flex-row hidden md:block {headlineClass}">
+			<nav class="btn-group preset-outlined-primary-300-700 flex-col p-2  hidden lg:block {headlineClass}">
 				{#each menuGlobal as item}
 					{#if item.link.startsWith("http")}
 						<button type="button" class="btn capitalize hover:preset-filled" onclick={e => window.location.href=item.link}>
@@ -78,9 +79,10 @@
 			</nav>
 		</AppBar.Headline>
 		<AppBar.Trail>
-			<Search bind:isActive={isSearchBarActive} fullScreen="true" />
+			<Search bind:isActive={isSearchBarActive} fullScreen="true" aria-label="Search W9YT" />
+			<ModeSwitch></ModeSwitch>
 			<Menu onSelect={globalMenuOnSelect}>
-				<Menu.Trigger class="btn px-1 md:px-4" aria-label="Member Tools Menu"><CircleUserIcon class="size-5" aria-label="Icon of Generic User" /></Menu.Trigger>
+				<Menu.Trigger class="btn px-1 md:px-2 sm:block hidden"><CircleUserIcon class="size-5" aria-label="User Menu" /></Menu.Trigger>
 				<Portal>
 					<Menu.Positioner>
 						<Menu.Content class="z-10">
@@ -98,12 +100,24 @@
 					</Menu.Positioner>
 				</Portal>
 			</Menu>
-
 			<Menu onSelect={globalMenuOnSelect}>
-				<Menu.Trigger class="btn px-1 md:px-4 md:mr-3" aria-label="Open Menu"><SvelteMenu class="size-6" aria-label="Icon of Generic Three Line Menu" /></Menu.Trigger>
+				<Menu.Trigger class="btn px-1 md:px-2 md:mr-3" aria-label="Content Menu"><SvelteMenu class="size-6" role="none" /></Menu.Trigger>
 				<Portal>
 					<Menu.Positioner>
 						<Menu.Content class="z-10">
+
+							<Menu.ItemGroup class="sm:hidden">
+								<Menu.ItemGroupLabel>User Menu</Menu.ItemGroupLabel>
+								{#each menuUser as item, i}
+									<Menu.Item value={item.link}>
+										<Menu.ItemText>
+											{item.text}
+										</Menu.ItemText>
+									</Menu.Item>
+								{/each}
+								<Menu.Separator />
+							</Menu.ItemGroup>
+
 							{#each menuSidebar as group, i}
 								<Menu.ItemGroup>
 									<Menu.ItemGroupLabel>{group.label}</Menu.ItemGroupLabel>
@@ -119,7 +133,10 @@
 								{#if menuSidebar.length - i > 1}
 									<Menu.Separator />
 								{/if}
-								{/each}
+							{/each}
+							
+
+							
 						</Menu.Content>
 
 					</Menu.Positioner>

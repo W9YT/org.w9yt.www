@@ -31,14 +31,14 @@
 	<a href="https://win.wisc.edu/organization/bars" target="_blank">
 		<button type="button" class="btn preset-filled mt-1">
 			<span>WISC WIN</span>
-			<GraduationCap size={18} />
+			<GraduationCap size={18} role="none"/>
 		</button>
 	</a>
 
 	
 	<button type="button" class="btn preset-filled mt-1" onclick={e => location.href="https://discord.gg/bZezMYCH9J"}>
 		<span>Discord</span>
-		<MessageCircleMore size={18} />
+		<MessageCircleMore size={18} role="none"/>
 	</button>
 
 	<p class="py-1 mt-10">
@@ -47,7 +47,7 @@
 	<a href="/getting-started/what-is-ham-radio/">
 		<button type="button" class="btn preset-filled-warning-200-800 mt-5">
 			<span>What is HAM Radio?</span>
-			<ArrowRightIcon size={18} />
+			<ArrowRightIcon size={18} role="none"/>
 		</button>
 	</a>
 
