@@ -104,7 +104,7 @@
 				<Menu.Trigger class="btn px-1 md:px-2 md:mr-3" aria-label="Content Menu"><SvelteMenu class="size-6" role="none" /></Menu.Trigger>
 				<Portal>
 					<Menu.Positioner>
-						<Menu.Content class="z-10">
+						<Menu.Content class="z-10 max-h-[80vh] overflow-y-scroll scrollbarHide">
 
 							<Menu.ItemGroup class="sm:hidden">
 								<Menu.ItemGroupLabel>User Menu</Menu.ItemGroupLabel>
