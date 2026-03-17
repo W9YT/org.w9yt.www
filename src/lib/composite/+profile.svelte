@@ -23,7 +23,7 @@
 <div class="inline-flex p-2">
 
     <Popover>
-        <Popover.Trigger>
+        <Popover.Trigger aria-label="Open {name} profile and bio">
             <div class="block max-w-sm overflow-hidden card border-[1px] border-surface-200-800 preset-filled-surface-100-900 card-hover min-w-80 max-w-screen md:min-w-fit">
                 
                 <article class="p-3">

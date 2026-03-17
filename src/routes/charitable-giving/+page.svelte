@@ -31,7 +31,7 @@
 	<a href="https://secure.supportuw.org/give/" target="_blank">
 		<button type="button" class="btn preset-filled mt-5">
 			<span>Donate Now</span>
-			<ArrowRightIcon size={18} />
+			<ArrowRightIcon size={18} role="none"/>
 		</button>
 	</a>
 

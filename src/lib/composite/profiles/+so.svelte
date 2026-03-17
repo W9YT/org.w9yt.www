@@ -15,4 +15,5 @@
 1500 Engineering Drive
 Madison, WI 53706"
     urlDepartment="https://pages.cs.wisc.edu/~hs/"
+    urlPersonal="https://hadleyso.com/?utm_source=www.w9yt.org&ref=www.w9yt.org"
 />

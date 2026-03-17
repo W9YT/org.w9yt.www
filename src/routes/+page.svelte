@@ -86,7 +86,7 @@
 				class="inline-flex items-center rounded-md bg-(--theme-red-500) hover:bg-(--theme-red-300 px-4 py-2 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
 				href="/getting-started/what-is-ham-radio/"
 			>
-				Learn More <ChevronRight class="pl-1 size-5" />
+				Learn More <ChevronRight class="pl-1 size-5" role="none"/>
 			</a>
 		</div>
 	</div>
@@ -129,7 +129,7 @@
 					class="inline-flex items-center rounded-md bg-(--theme-red-500) hover:bg-(--theme-red-300) px-4 py-2 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
 					href="/history/founding-w9yt-laun/"
 				>
-					Read about Laun's experience founding W9YT <ChevronRight class="pl-1 size-5" />
+					Read about Laun's experience founding W9YT <ChevronRight role="none" class="pl-1 size-5" />
 				</a>
 			</p>
 
@@ -152,7 +152,7 @@
 					class="inline-flex items-center rounded-md bg-(--theme-red-500) hover:bg-(--theme-red-300) px-4 py-2 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
 					href="/history/founding-w9yt-dubberstein/"
 				>
-					Read Dubberstein's experience with W9YT <ChevronRight class="pl-1 size-5" />
+					Read Dubberstein's experience with W9YT <ChevronRight role="none" class="pl-1 size-5" />
 				</a>
 			</p>
 
@@ -174,7 +174,7 @@
 			class="inline-flex items-center rounded-md bg-gray-50 hover:bg-(--theme-red-400) hover:text-white px-4 py-2 text-sm font-medium text-(--theme-red-500) focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
 			href="/getting-started/"
 		>
-			Get started <ChevronRight class="pl-1 size-5" />
+			Get started <ChevronRight role="none" class="pl-1 size-5" />
 		</a>
 	</p>
 </section>

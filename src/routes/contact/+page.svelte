@@ -63,7 +63,7 @@
 			</p>
 			<button type="button" class="btn preset-filled mt-1" onclick={e => location.href="mailto:officers@w9yt.org"}>
 				<span>Contact Us</span>
-				<Mail size={18} />
+				<Mail size={18} role="none"/>
 			</button>
 
 			<p class="pb-2 pt-10">
@@ -97,11 +97,11 @@
 			</p>
 			<button type="button" class="btn preset-filled mt-1" onclick={e => location.href="https://www.facebook.com/w9ytbars"}>
 				<span>W9YTBARS</span>
-				<Facebook size={18} />
+				<Facebook size={18} role="none"/>
 			</button>
 			<button type="button" class="btn preset-filled mt-1" onclick={e => location.href="http://www.twitter.com/W9YT"}>
 				<span>W9YT</span>
-				<Twitter size={18} />
+				<Twitter size={18} role="none"/>
 			</button>
 		</Tabs.Content>
 		<Tabs.Content value="#web" class="mx-auto max-w-2xl">
@@ -138,7 +138,7 @@
 			<a href="/charitable-giving/" target="_blank">
 				<button type="button" class="btn preset-filled mt-5">
 					<span>Donate Now</span>
-					<ArrowRightIcon size={18} />
+					<ArrowRightIcon size={18} role="none"/>
 				</button>
 			</a>
 		</Tabs.Content>

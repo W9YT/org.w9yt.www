@@ -11,6 +11,8 @@
     --font-display: "FunnelDisplay", sans-serif;
 }
 
+@custom-variant dark (&:where([data-mode="dark"], [data-mode="dark"] *));
+
 :root {
   /* Base */
   --theme-red: #C5050C;
