@@ -220,7 +220,7 @@
 
 		<div class="lg:flex items-start w-screen lg:w-5/6 max-w-6xl mx-auto lg:pb-5">
 			<p class="text-2xl font-(family-name:--font-display) font-semibold tracking-widest p-3 lg:p-0 lg:my-3 flex space-between">
-				Search W9YT
+				<label for="globalWikiSearchInput">Search W9YT</label>
 				<!-- Mobile Close Button -->
 				<button class="ml-auto lg:hidden text-right inline-block pr-3" onclick={close}>
 					<X class="size-5" />
@@ -252,8 +252,7 @@
 					}}
 				>
 					<Combobox.Control>
-						<Combobox.Input id="globalWikiSearchInput" />
-						<Combobox.Trigger />
+						<Combobox.Input id="globalWikiSearchInput" aria-label="Search W9YT"/>
 					</Combobox.Control>
 					<Portal>
 						<Combobox.Positioner class="fixed left-0 w-screen">
@@ -279,8 +278,8 @@
 				</Combobox>
 
 				<!-- Close Button -->
-				<button class="btn btn-sm hidden lg:block" onclick={close}>
-					<X class="size-5" />
+				<button class="btn btn-sm hidden lg:block" onclick={close} aria-label="Close search" >
+					<X class="size-5" role="none" />
 				</button>
 			</div>
 		</div>

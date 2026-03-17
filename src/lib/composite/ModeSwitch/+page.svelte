@@ -37,7 +37,7 @@
 	</script>
 </svelte:head>
 
-<Switch {checked} {onCheckedChange} aria-label="Toggle dark and light mode" role="switch" class="px-1 md:px-2">
+<Switch {checked} {onCheckedChange} aria-label="Toggle dark and light mode" class="px-1 md:px-2">
 	<Switch.Control>
 		<Switch.Thumb class="dark:bg-black">
 			{#if checked}
