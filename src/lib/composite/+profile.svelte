@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Avatar, Popover, Portal } from '@skeletonlabs/skeleton-svelte';
-    import { Mail, XIcon } from '@lucide/svelte';
+    import { Mail, XIcon, FileKey, FingerprintPattern } from '@lucide/svelte';
 
 	let {
 		name = 'John Doe',
@@ -15,9 +15,11 @@
         address = "",
         email = "",
         phone = "",
+        gpg = "",
 	} = $props();
     let initials = $derived(name.split(" ").map(word => word[0]).join("").toUpperCase());
     let emailList = $derived(email.split(","));
+    let gpgList = $derived(gpg.split(","));
 </script>
 
 <div class="inline-flex p-2">
@@ -54,7 +56,7 @@
                                 <Popover.Title class="text-lg font-bold">{name} {salutation}</Popover.Title>
                             </div>
                             <Popover.CloseTrigger class="btn-icon hover:preset-tonal self-start absolute top-5 right-5">
-                                <XIcon class="size-4" />
+                                <XIcon class="size-4" role="none" />
                             </Popover.CloseTrigger>
                         </header>
                         <Popover.Description>
@@ -62,7 +64,7 @@
                             {#if department.length > 0 && blurb.length > 0}
                                 <br><br>
                             {/if}
-                            <p style="white-space: pre-line;">
+                            <p style="white-space: pre-line;" class="text-balance">
                                 {blurb}
                             </p>
                         </Popover.Description>
@@ -73,6 +75,7 @@
                             </div>
                         {/if}
 
+                        {#if urlPersonal.length > 0 || urlDepartment.length > 0 || urlResearch.length > 0}
                         <div class="flex gap-4">
                             {#if urlPersonal.length > 0}
                                 <a href="{urlPersonal}" target="_blank" class="text-sm opacity-60">Personal Website</a>
@@ -84,11 +87,13 @@
                                 <a href="{urlResearch}" target="_blank" class="text-sm opacity-60">Research Website</a>
                             {/if}
                         </div>
+                        {/if}
   
-                        <div class="inline-flex items-center gap-4">
+                        {#if email.length > 0 || phone.length > 0}
+                        <div class="flex flex-wrap items-center gap-4">
                             {#if email.length > 0}
                                 {#each emailList as emailAddress}
-                                    <a href="mailto:{emailAddress}">
+                                    <a href="mailto:{emailAddress}" class="flex-none">
                                         <button type="button" class="btn preset-filled mt-1">
                                             <span class="text-sm">
                                                 Email
@@ -96,15 +101,32 @@
                                                     ({emailAddress.split("@")[1]})
                                                 {/if}
                                             </span>
-                                            <Mail size={12} />
+                                            <Mail size={12} role="none" />
                                         </button>
                                     </a>
                                 {/each}
                             {/if}
                             {#if phone.length > 0}
-                                <p class="text-regular">{phone}</p>
+                                <p class="flex-none text-regular">{phone}</p>
                             {/if}
                         </div>
+                        {/if}
+
+                        {#if gpg.length > 0}
+                        <div class="flex flex-wrap items-center gap-4">
+                                {#each gpgList as gpgEntry}
+                                    {#if gpgEntry.startsWith("https://")}
+                                        <a href="{gpgEntry}" target="_blank" class="flex-none text-xs opacity-60" rel="nofollow noindex">
+                                            <FileKey class="inline size-4" role="none"  /> GPG Public Key Download
+                                        </a>
+                                    {:else}
+                                        <p class="flex-none text-xs opacity-60 text-balance max-w-100">
+                                            <FingerprintPattern class="inline size-3" role="none"  /> Key Fingerprint: <span class="select-all">{gpgEntry}</span>
+                                        </p>
+                                    {/if}
+                                {/each}
+                        </div>
+                        {/if}
                     </div>
                     <Popover.Arrow class="[--arrow-size:--spacing(2)] [--arrow-background:var(--color-surface-100-900)]">
                         <Popover.ArrowTip />
