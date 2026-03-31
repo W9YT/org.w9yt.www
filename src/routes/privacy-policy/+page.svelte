@@ -1,10 +1,11 @@
 <script lang="ts">
 	const tableData = [
-		{ name: 'Amazon Web Services (AWS), Amazon.com, Inc.', role: 'Cloud Services', address: '410 Terry Avenue N, Seattle, WA 98109, USA' },
-		{ name: 'Migadu-Mail GmbH', role: 'Cloud Services', address: 'Rohnen 587 CH-9414 Schachen Switzerland' },
-		{ name: 'University of Wisconsin Foundation', role: 'Financial Services', address: 'University of Wisconsin Foundation 1848 University Avenue Madison, WI 53726-4090 USA' },
-		{ name: 'University of Wisconsin-Madison', role: 'Organizational Services, Compute Services', address: '1415 Engineering Drive Madison, WI 53706 USA' },
-		{ name: 'UW Credit Union', role: 'Banking and Financial Services', address: 'UW Credit Union PO Box 44963 Madison, WI 53744-4963 USA' },
+		{ name: '<a href="https://aws.amazon.com/legal/" rel="noopener noreferrer nofollow">Amazon Web Services (AWS), Amazon.com, Inc.</a>', role: 'Cloud Services', address: '410 Terry Avenue N, Seattle, WA 98109, USA', scope: "AU"},
+		{ name: '<a href="https://www.berg-systems.ch/" rel="noopener noreferrer nofollow">Berg Systems</a>', role: 'Cloud Services', address: 'Appenzell, Switzerland', scope: "MB" },
+		{ name: 'Migadu-Mail GmbH', role: 'Cloud Services', address: 'Rohnen 587 CH-9414 Schachen Switzerland', scope: "AU" },
+		{ name: 'University of Wisconsin Foundation', role: 'Financial Services', address: 'University of Wisconsin Foundation 1848 University Avenue Madison, WI 53726-4090 USA', scope: "AU" },
+		{ name: 'University of Wisconsin-Madison', role: 'Organizational Services, Compute Services', address: '1415 Engineering Drive Madison, WI 53706 USA', scope: "AU" },
+		{ name: 'UW Credit Union', role: 'Banking and Financial Services', address: 'UW Credit Union PO Box 44963 Madison, WI 53744-4963 USA', scope: "FN" },
 
 	];
 </script>
@@ -22,7 +23,7 @@
 	</h2>
 
 	<div class="max-w-2xl">
-		<p class="py-2">Last Updated: 6th February 2026</p>
+		<p class="py-2">Last Updated: 31st March 2026</p>
 
 		<p class="py-2">
 			This Privacy Notice for Badger Amateur Radio Society and its affiliates ("we," "us," or
@@ -80,22 +81,9 @@
 		</p>
 		<p class="py-2">
 			We will only disclose personal information to others for legitimate business purposes like fundraising and
-			payment processing. The following are organizations that provide applications, data processing, 
-			banking, or IT services to us:
+			payment processing.
 		</p>
-		<div class="table-wrap">
-			<table class="table caption-bottom">
-				<tbody class="[&>tr]:hover:preset-tonal-primary">
-					{#each tableData as row}
-						<tr>
-							<td>{row.name}</td>
-							<td>{row.role}</td>
-							<td>{row.address}</td>
-						</tr>
-					{/each}
-				</tbody>
-			</table>
-		</div>
+
 		<p class="py-2">
 			Information and communication sent via electronic or physical QSL cards may be made public on
 			Badger Amateur Radio Sites, or on public archival sites like Archive.org, www.loc.gov, and www.wisconsinhistory.org.
@@ -105,8 +93,46 @@
 		<p class="py-2">
 			Individuals may create a BARS account for purposes like contributing to the Wiki. 
 			Please see the account service provider  
-			<a href="https://www.hadleyso.com/privacy-policy/" class="underline">privacy policy</a> and 
-			<a href="https://www.hadleyso.com/terms/" class="underline">terms of use</a>.
+			<a rel="noopener noreferrer" href="https://www.hadleyso.com/privacy-policy/" class="underline">privacy policy</a> and 
+			<a rel="noopener noreferrer" href="https://www.hadleyso.com/terms/" class="underline">terms of use</a>.
+		</p>
+		<p class="py-2">
+			Badger Amateur Radio Society officers and the 
+			<a rel="noopener noreferrer" href="https://www.hadleyso.com/" class="underline">service provider </a>
+			are able to view your profile information, including your email address.
+		</p>
+
+		<h3 class="pt-3 text-xl font-medium">Subprocessors</h3>
+		<p class="py-2">
+			The following are organizations that provide applications, data processing, 
+			banking, or IT services to us:
+		</p>
+		<div class="table-wrap">
+			<table class="table caption-bottom">
+				<tbody class="[&>tr]:hover:preset-tonal-primary">
+					<tr>
+						<th>Provider</th>
+						<th>Purpose</th>
+						<th>Address</th>
+						<th>Scope</th>
+					</tr>
+					{#each tableData as row}
+						<tr>
+							<td>{@html row.name}</td>
+							<td>{row.role}</td>
+							<td>{row.address}</td>
+							<td>{row.scope}</td>
+						</tr>
+					{/each}
+				</tbody>
+			</table>
+		</div>
+		<p class="py-2">
+			<code class="font-semibold">AU</code> - All Users: visitors; individuals, businesses, or organizations that contact us using email, telephone, mail, social media, courier, or radio; Badger Amateur Radio Society account holders
+			<br>
+			<code class="font-semibold">MB</code> - Members: Badger Amateur Radio Society account holders
+			<br>
+			<code class="font-semibold">FN</code> - Financial Relationship: individuals, businesses, or organizations that have a financial relationship with us including vendors and reimbursements
 		</p>
 
 		<h3 class="pt-3 text-xl font-medium">Changes to this policy</h3>
