@@ -1,4 +1,6 @@
-# www.W9YT.org 
+# www.w9yt.org 
+[![.github/workflows/deploy.yml](https://github.com/W9YT/org.w9yt.www/actions/workflows/deploy.yml/badge.svg)](https://github.com/W9YT/org.w9yt.www/actions/workflows/deploy.yml)
+
 Source for the Badger Amateur Radio Society's website for resources available 
 to students, faculty, and community members. The Badger Amateur Radio 
 Society (W9YT) is a registered student organization at the University of 
