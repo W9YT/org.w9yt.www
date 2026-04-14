@@ -8,5 +8,7 @@
 <Profile
     name="Will Standaert"
     department="Civil & Environmental Engineering; College of Engineering"
+    blurb="KE9CMP"
+    email="ws@w9yt.org"
     position={position}
 />

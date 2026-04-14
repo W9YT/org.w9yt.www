@@ -9,10 +9,9 @@
 	import { CircleUserIcon } from '@lucide/svelte';
 	import { Menu as SvelteMenu } from '@lucide/svelte';
 	import { AppBar, Menu, Portal } from '@skeletonlabs/skeleton-svelte';
+	import GlobalMenu from '$lib/composite/GlobalMenu/+page.svelte'
 
 	import menuGlobal from '$lib/menus/global-center.json';
-	import menuUser from '$lib/menus/global-user.json';
-	import menuSidebar from '$lib/menus/global-sidebar.json';
 	import { goto } from '$app/navigation';
 	import SiteProvider from '$lib/composite/+site-provider.svelte';
 	import Search from '$lib/composite/search/+page.svelte'
@@ -81,67 +80,8 @@
 		<AppBar.Trail>
 			<Search bind:isActive={isSearchBarActive} fullScreen="true" aria-label="Search W9YT" />
 			<ModeSwitch></ModeSwitch>
-			<Menu onSelect={globalMenuOnSelect}>
-				<Menu.Trigger class="btn px-1 md:px-2 sm:block hidden"><CircleUserIcon class="size-5" aria-label="User Menu" /></Menu.Trigger>
-				<Portal>
-					<Menu.Positioner>
-						<Menu.Content class="z-10">
-							<Menu.ItemGroup>
-								<Menu.ItemGroupLabel>Member Tools</Menu.ItemGroupLabel>
-								{#each menuUser as item}
-									<Menu.Item value={item.link}>
-										<Menu.ItemText data-nosnippet> <!-- https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag -->
-											{item.text}
-										</Menu.ItemText>
-									</Menu.Item>
-								{/each}
-							</Menu.ItemGroup>
-						</Menu.Content>
-					</Menu.Positioner>
-				</Portal>
-			</Menu>
-			<Menu onSelect={globalMenuOnSelect}>
-				<Menu.Trigger class="btn px-1 md:px-2 md:mr-3" aria-label="Content Menu"><SvelteMenu class="size-6" role="none" /></Menu.Trigger>
-				<Portal>
-					<Menu.Positioner>
-						<Menu.Content class="z-10 max-h-[80vh] overflow-y-scroll scrollbarHide">
 
-							<Menu.ItemGroup class="sm:hidden">
-								<Menu.ItemGroupLabel>User Menu</Menu.ItemGroupLabel>
-								{#each menuUser as item, i}
-									<Menu.Item value={item.link}>
-										<Menu.ItemText>
-											{item.text}
-										</Menu.ItemText>
-									</Menu.Item>
-								{/each}
-								<Menu.Separator />
-							</Menu.ItemGroup>
-
-							{#each menuSidebar as group, i}
-								<Menu.ItemGroup>
-									<Menu.ItemGroupLabel>{group.label}</Menu.ItemGroupLabel>
-
-									{#each group.items as item}
-										<Menu.Item value={item.link}>
-											<Menu.ItemText>
-												{item.text}
-											</Menu.ItemText>
-										</Menu.Item>
-									{/each}
-								</Menu.ItemGroup>
-								{#if menuSidebar.length - i > 1}
-									<Menu.Separator />
-								{/if}
-							{/each}
-							
-
-							
-						</Menu.Content>
-
-					</Menu.Positioner>
-				</Portal>
-			</Menu>
+			<GlobalMenu></GlobalMenu>
 		</AppBar.Trail>
 	</AppBar.Toolbar>
 </AppBar>
