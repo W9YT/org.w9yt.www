@@ -6,9 +6,7 @@
 	import { page } from '$app/state';
 	import ModeSwitch from '$lib/composite/ModeSwitch/+page.svelte';
 
-	import { CircleUserIcon } from '@lucide/svelte';
-	import { Menu as SvelteMenu } from '@lucide/svelte';
-	import { AppBar, Menu, Portal } from '@skeletonlabs/skeleton-svelte';
+	import { AppBar } from '@skeletonlabs/skeleton-svelte';
 	import GlobalMenu from '$lib/composite/GlobalMenu/+page.svelte'
 
 	import menuGlobal from '$lib/menus/global-center.json';
@@ -30,6 +28,7 @@
 	}
 
 	let isSearchBarActive = $state(false);
+	let isGlobalMenuActive = $state(false);
 	let headlineClass = $state("");
 	let logoClass = $state("");
 	$effect(() => {
@@ -53,7 +52,7 @@
 	</div>
 </noscript>
 
-<AppBar class="sticky top-0 z-5">
+<AppBar class="sticky top-0 z-5" aria-hidden={isGlobalMenuActive ? "true" : undefined}>
 	<AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
 
 		<AppBar.Lead>
@@ -78,15 +77,15 @@
 			</nav>
 		</AppBar.Headline>
 		<AppBar.Trail>
-			<Search bind:isActive={isSearchBarActive} fullScreen="true" aria-label="Search W9YT" />
+			<Search bind:isActive={isSearchBarActive} fullScreen="true" aria-label="Search W9YT" class="" />
 			<ModeSwitch></ModeSwitch>
 
-			<GlobalMenu></GlobalMenu>
+			<GlobalMenu bind:isOpen={isGlobalMenuActive}></GlobalMenu>
 		</AppBar.Trail>
 	</AppBar.Toolbar>
 </AppBar>
 
-<section class="min-h-screen">
+<section class="min-h-screen" aria-hidden={isGlobalMenuActive ? "true" : undefined}>
 	{@render children()}
 </section>
 

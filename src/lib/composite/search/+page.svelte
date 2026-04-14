@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { ArrowLeft, SearchIcon, X } from '@lucide/svelte';
+	import { SearchIcon, X } from '@lucide/svelte';
 	import { Combobox, Portal, type ComboboxRootProps, useListCollection, Tooltip } from '@skeletonlabs/skeleton-svelte';
 	import { tick } from 'svelte';
+	import { slide } from 'svelte/transition';
 
-	let {preOpen = false, isActive = $bindable(false), fullScreen = false } = $props();
+	let {preOpen = false, isActive = $bindable(false), fullScreen = false, buttonIconClass = "", children} = $props();
 
 	const dataPrompt = [
 		{ label: 'Type to search', value: 'Type to search', snippet: "", size: 0, wordCount: 0 }
@@ -77,6 +78,7 @@
 					} else {
 						items = [{ label: 'No results', value: '====NORESULT====', snippet: "", size: 0, wordCount: 0 }];
 					}
+					comboboxOpen = true;
 				} catch (err) {
 					console.error("MediaWiki search error:", err);
 					items = dataError;
@@ -101,7 +103,7 @@
 
 	const onInteractOutside = () => {
 		if (!preOpen) {
-			isActive = false;
+			close();
 		}
 	}
 
@@ -119,8 +121,12 @@
 	});
 
 	function close() {
+		console.log("Close search")
+		comboboxOpen = false;
         isActive = false;
     }
+
+	let comboboxOpen = $state(false);
 
 	// svelte-ignore non_reactive_update
 	let wrapperClass = "relative";
@@ -144,13 +150,16 @@
 	});
 </script>
 
-<div class="pt-1">
-	<button type="button" class="btn px-1 md:px-4 {hideButton}" onclick={() => (isActive = true)} aria-label="Search W9YT">
-		<SearchIcon class="size-5" aria-hidden="true" />
+	<button type="button" class="btn {hideButton} {buttonIconClass}" onclick={() => (isActive = true)} aria-label="Search W9YT">
+		{#if children}
+			{@render children()}
+		{:else}
+			<SearchIcon class="size-5" aria-hidden="true" />
+		{/if}
 	</button>
 
 	{#if !fullScreen}
-	<div class="{wrapperClass}">
+	<div class="{wrapperClass}" transition:slide={{ axis: 'y', duration: 300 }}>
 		<Combobox
 			class="{boxClass} max-w-sm min-w-2xs px-2 {hideSearchInput} bg-[var(--color-surface-100-900)]"
 			placeholder="Search Wiki..."
@@ -159,13 +168,14 @@
 			{onInputValueChange}
 			{onInteractOutside}
 			{onSelect}
+			open={comboboxOpen}
 			onPointerDownOutside={onInteractOutside}
 			onFocusOutside={onInteractOutside}
 			inputBehavior="autohighlight"
 			selectionBehavior="clear"
 			value={selected}
 			onkeydown={(e) => {
-				if (e.key === 'Escape' && !preOpen) isActive = false;
+				if (e.key === 'Escape' && !preOpen) close();
 			}}
 		>
 			<Combobox.Control>
@@ -210,12 +220,11 @@
 		</Combobox>
 	</div>
 	{/if}
-</div>
 
 {#if isActive && fullScreen}
 	<!-- Search Panel -->
 
-	<div class="fixed inset-0 z-50 justify-center pt-1 lg:pt-24 animate-slide-down bg-[var(--color-surface-100-900)] px-2 lg:px-0">
+	<div class="fixed inset-0 z-50 justify-center pt-1 lg:pt-24 animate-slide-down bg-[var(--color-surface-100-900)] px-2 lg:px-0" transition:slide={{ axis: 'y', duration: 300 }}>
 
 
 		<div class="lg:flex items-start w-screen lg:w-5/6 max-w-6xl mx-auto lg:pb-5">
@@ -242,17 +251,18 @@
 					{onInputValueChange}
 					{onInteractOutside}
 					{onSelect}
+					open={comboboxOpen}
 					onPointerDownOutside={onInteractOutside}
 					onFocusOutside={onInteractOutside}
 					inputBehavior="autohighlight"
 					selectionBehavior="clear"
 					value={selected}
 					onkeydown={(e) => {
-						if (e.key === 'Escape' && !preOpen) isActive = false;
+						if (e.key === 'Escape' && !preOpen) close();
 					}}
 				>
 					<Combobox.Control>
-						<Combobox.Input id="globalWikiSearchInput" aria-label="Search W9YT"/>
+						<Combobox.Input id="globalWikiSearchInput" aria-label="Search W9YT" class="py-4"/>
 					</Combobox.Control>
 					<Portal>
 						<Combobox.Positioner class="fixed left-0 w-screen">

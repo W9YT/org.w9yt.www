@@ -1,11 +1,23 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import menuSidebar from '$lib/menus/global-sidebar.json';
-	import { Menu as SvelteMenu, X, ArrowLeft } from '@lucide/svelte';
+	import { Menu as SvelteMenu, X, ArrowLeft, SearchIcon } from '@lucide/svelte';
 	import { AppBar } from '@skeletonlabs/skeleton-svelte';
-	import { slide } from 'svelte/transition';
+	import { onMount } from 'svelte';
+	import { fade, slide } from 'svelte/transition';
+	import Search from '$lib/composite/search/+page.svelte'
 
-	let open = $state(false);
+
+	let {isOpen = $bindable(false)} = $props();
+	
+	onMount(() => {
+        const handler = (e: { key: string; }) => {
+            if (e.key === 'Escape') isOpen = false;
+            if (e.key === 'm') isOpen = true;
+        };
+        window.addEventListener('keydown', handler);
+        return () => window.removeEventListener('keydown', handler);
+    });
 	let column2 = $state("");
 	let column2done = $state(true);
 
@@ -17,11 +29,11 @@
 		} else {
 			goto(path);
 		}
-		open = false;
+		isOpen = false;
 		column2 = "";
 	};
 	const menuClose = () => {
-		open = false;
+		isOpen = false;
 		column2 = "";
 	}
 </script>
@@ -31,15 +43,15 @@
 <!-- Toggle Button -->
 <button
 	class="rounded-md p-2 transition-colors hover:bg-surface-200-800"
-	onclick={() => (open = true)}
+	onclick={() => (isOpen = true)}
 	aria-label="Open menu"
 >
 	<SvelteMenu class="size-6" role="none" />
 </button>
 
 <!-- Fullscreen Menu Overlay -->
-{#if open}
-	<div data-nosnippet class="fixed inset-0 z-50 flex flex-col bg-white dark:bg-black" transition:slide={{ axis: 'y', duration: 400 }}>
+{#if isOpen}
+	<div data-nosnippet class="fixed inset-0 z-50 flex flex-col bg-white dark:bg-black" transition:slide={{ axis: 'y', duration: 300 }}>
 		<AppBar class="sticky top-0 z-5">
 			<AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
 				<AppBar.Lead>
@@ -69,19 +81,33 @@
 		</AppBar>
 
 		<!-- Menu Content -->
-		<nav class="flex h-[calc(100vh-80px)] space-y-8 text-xl md:text-3xl font-semibold" >
+		<nav class="flex h-[calc(100vh-80px)] space-y-8 text-2xl md:text-3xl font-semibold" >
 			<div data-nosnippet class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full  max-w-[1140px]">
 
 				<!-- COL 1 -->
-				<div class="md:border-r border-neutral-300 dark:border-neutral-700 px-4 pt-5 overflow-y-scroll scrollbarHide max-h-full {column2 || !column2done ? 'hidden md:block' : ''}" >
+				<div class="md:border-r border-neutral-300 dark:border-neutral-700 md:px-4 md:pt-5 overflow-y-scroll scrollbarHide max-h-full {column2 || !column2done ? 'hidden md:block' : ''}" transition:slide={{ axis: 'x', duration: 900 }} onoutroend={() => column2done = true}>
 
 					{#each menuSidebar as group, i}
 						{#if (group.label)}
-							<button class="w-full p-3 px-7 m-1 hover:bg-(--theme-red-100)/50 rounded-2xl text-left" onclick={() => (column2 = group.label)}>
-								{group.label}
-							</button>
+							<div class="border-b md:border-b-0 border-neutral-300 dark:border-neutral-700 w-full pr-2">
+								<button class="w-full p-3 px-7 m-1 hover:bg-(--theme-red-100)/50 rounded-2xl text-left whitespace-nowrap overflow-hidden" onclick={() => (column2 = group.label)}>
+									{group.label}
+								</button>
+							</div>
 						{/if}
 					{/each}
+					<div class="border-b md:border-b-0 border-neutral-300 dark:border-neutral-700 w-full pr-2">
+						<div class="w-full p-3 px-7 m-1 hover:bg-(--theme-red-100)/50 rounded-2xl text-left whitespace-nowrap overflow-hidden">
+							<Search fullScreen="true" aria-label="Search W9YT" buttonIconClass="p-0 w-full">
+								<div class="text-2xl md:text-3xl font-semibold flex gap-3 w-full">
+									<span transition:fade={{ duration: 200 }} class="my-auto">
+										<SearchIcon class="size-6 my-auto" aria-hidden="true" />
+									</span>
+									Search Wiki
+								</div>
+							</Search> 
+						</div>
+					</div>
 
 					
 				</div>
