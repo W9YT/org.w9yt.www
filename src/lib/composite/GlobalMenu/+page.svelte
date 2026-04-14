@@ -7,6 +7,7 @@
 
 	let open = $state(false);
 	let column2 = $state("");
+	let column2done = $state(true);
 
 	let col2class = $derived(column2 ? "md:border-r border-neutral-300 dark:border-neutral-700" : "");
 
@@ -72,7 +73,7 @@
 			<div data-nosnippet class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full  max-w-[1140px]">
 
 				<!-- COL 1 -->
-				<div class="md:border-r border-neutral-300 dark:border-neutral-700 px-4 pt-5 overflow-y-scroll scrollbarHide max-h-full {column2 ? 'hidden md:block' : ''}">
+				<div class="md:border-r border-neutral-300 dark:border-neutral-700 px-4 pt-5 overflow-y-scroll scrollbarHide max-h-full {column2 || !column2done ? 'hidden md:block' : ''}" >
 
 					{#each menuSidebar as group, i}
 						{#if (group.label)}
@@ -87,10 +88,10 @@
 
 				<!-- COL 2 -->
 				{#if column2 != ""}
-					<div class="{col2class} md:px-4 col-span-2 pt-5 overflow-y-scroll scrollbarHide max-h-full" transition:slide={{ axis: 'x', duration: 800 }}>
+					<div class="{col2class} md:px-4 col-span-2 pt-5 overflow-y-scroll scrollbarHide max-h-full" transition:slide={{ axis: 'x', duration: 800 }} onoutroend={() => column2done = true}>
 
 						<p class="mt-1 py-3 pl-3 md:block hidden">{column2}</p>
-						<button class="border border-neutral-300 dark:border-neutral-700 mt-1 py-3 pl-5 mb-4 md:hidden flex items-center gap-3 w-full" onclick={() => (column2 = "")}>
+						<button class="border border-neutral-300 dark:border-neutral-700 mt-1 py-3 pl-5 mb-4 md:hidden flex items-center gap-3 w-full" onclick={() => (column2done = false, column2 = "")}>
 							<div class="h-full border-r border-neutral-400 dark:border-neutral-600 pr-3 flex items-center">
 								<ArrowLeft class="size-5" />
 							</div>
