@@ -77,7 +77,7 @@
 			</nav>
 		</AppBar.Headline>
 		<AppBar.Trail>
-			<Search bind:isActive={isSearchBarActive} fullScreen="true" aria-label="Search W9YT" class="" />
+			<Search bind:isActive={isSearchBarActive} fullScreen="true" aria-label="Search W9YT" buttonIconClass="hidden sm:block" />
 			<ModeSwitch></ModeSwitch>
 
 			<GlobalMenu bind:isOpen={isGlobalMenuActive}></GlobalMenu>
