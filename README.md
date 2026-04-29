@@ -1,5 +1,6 @@
 # www.w9yt.org 
 [![.github/workflows/deploy.yml](https://github.com/W9YT/org.w9yt.www/actions/workflows/deploy.yml/badge.svg)](https://github.com/W9YT/org.w9yt.www/actions/workflows/deploy.yml)
+[![.github/workflows/test.yml](https://github.com/W9YT/org.w9yt.www/actions/workflows/test.yml/badge.svg)](https://github.com/W9YT/org.w9yt.www/actions/workflows/test.yml)
 
 Source for the Badger Amateur Radio Society's website for resources available 
 to students, faculty, and community members. The Badger Amateur Radio 
