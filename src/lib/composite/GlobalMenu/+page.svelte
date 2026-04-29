@@ -12,7 +12,7 @@
 	
 	onMount(() => {
         const handler = (e: { key: string; }) => {
-            if (e.key === 'Escape') isOpen = false;
+            if (e.key === 'Escape') menuClose();
             if (e.key === 'm') isOpen = true;
         };
         window.addEventListener('keydown', handler);
@@ -29,7 +29,7 @@
 		} else {
 			goto(path);
 		}
-		isOpen = false;
+		menuClose();
 		column2 = "";
 	};
 	const menuClose = () => {
@@ -116,7 +116,7 @@
 				{#if column2 != ""}
 					<div class="{col2class} md:px-4 col-span-2 pt-5 overflow-y-scroll scrollbarHide max-h-full" transition:slide={{ axis: 'x', duration: 800 }} onoutroend={() => column2done = true}>
 
-						<p class="mt-1 py-3 pl-3 md:block hidden">{column2}</p>
+						<p class="mt-1 py-3 pl-3 md:block hidden whitespace-nowrap overflow-hidden">{column2}</p>
 						<button class="border border-neutral-300 dark:border-neutral-700 mt-1 py-3 pl-5 mb-4 md:hidden flex items-center gap-3 w-full" onclick={() => (column2done = false, column2 = "")}>
 							<div class="h-full border-r border-neutral-400 dark:border-neutral-600 pr-3 flex items-center">
 								<ArrowLeft class="size-5" />

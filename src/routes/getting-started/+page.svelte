@@ -45,7 +45,7 @@
 		Just learning about HAM radio? Read...
 	</p>
 	<a href="/getting-started/what-is-ham-radio/">
-		<button type="button" class="btn preset-filled-warning-200-800 mt-5">
+		<button type="button" class="btn preset-filled-surface-200-800 mt-5">
 			<span>What is HAM Radio?</span>
 			<ArrowRightIcon size={18} role="none"/>
 		</button>

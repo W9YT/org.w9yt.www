@@ -24,7 +24,7 @@
 
 	<button
 		type="button"
-		class="mt-5 btn preset-filled-warning-200-800 py-2"
+		class="mt-5 btn preset-filled-surface-200-800 py-2"
 		onclick={() => window.open('/.well-known/manage-account-no-robot.html', '_blank')}
 	>
 		<span>Manage profile & account</span>
