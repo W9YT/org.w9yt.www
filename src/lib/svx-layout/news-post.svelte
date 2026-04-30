@@ -43,17 +43,17 @@
 
 <div class="max-w-6xl mx-auto px-1">
 
-    <p class="pt-10 text-lg font-(family-name:--font-display) hidden lg:block">
+    <p class="pt-10 pl-2 text-lg font-(family-name:--font-display) hidden lg:block">
         News & Events
     </p>
 
-    <section class="grid grid-cols-10 gap-10 pt-10 px-5 md:px-3 min-h-screen">
+    <section class="grid grid-cols-10 gap-10 pt-10 md:px-3 min-h-screen">
 
-        <div class="col-span-10 md:col-span-7">
-                <h1 class="text-5xl/15 pb-10 font-semibold">{ Title }</h1>
+        <div class="col-span-10 lg:col-span-7 px-3 md:px-0">
+                <h1 class="text-4xl/12 md:text-5xl/15 pb-10 font-semibold">{ Title }</h1>
 
 
-                <div class="block md:hidden pb-10">
+                <div class="block lg:hidden pb-10">
                     {#if ProfileTag}
                         <svelte:component this={Profiles} {ProfileTag} />
                         <p class="pl-2 opacity-50"><b>Published:</b> { Published }</p>
@@ -63,12 +63,14 @@
                     {/if}
                 </div>
 
+                <div class="px-2">
                 <slot>
                     <!-- the mdsvex content will be slotted in here -->
                 </slot>
+                </div>
         </div>
 
-        <div class="col-span-0 md:col-span-3 md:pt-8 hidden md:block">
+        <div class="col-span-0 lg:col-span-3 lg:pt-8 hidden lg:block">
             {#if ProfileTag}
                 <svelte:component this={Profiles} {ProfileTag} />
                 <p class="pl-2 opacity-50"><b>Published:</b> { Published }</p>
@@ -81,9 +83,9 @@
 
     </section>
 
-    <section class="pt-10 pb-20 px-5 md:px-1" data-nosnippet> <!-- https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag -->
+    <section class="pt-10 pb-20 px-1" data-nosnippet> <!-- https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag -->
         <hr class="pt-10 opacity-40">
-        <p class="italic font-light">
+        <p class="italic font-light px-2">
             Since 1930, the Badger Amateur Radio Society has been W9YT, the amateur radio club at the 
             University of Wisconsin-Madison, serving UW-Madison students and the greater community.
             <br><br>

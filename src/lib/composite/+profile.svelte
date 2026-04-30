@@ -26,7 +26,7 @@
 
     <Popover>
         <Popover.Trigger aria-label="Open {name} profile and bio">
-            <div class="block max-w-sm overflow-hidden card border-[1px] border-surface-200-800 preset-filled-surface-100-900 card-hover min-w-80 max-w-screen md:min-w-fit">
+            <div class="block overflow-hidden card border-[1px] border-surface-200-800 preset-filled-surface-100-900 card-hover max-w-screen md:min-w-fit">
                 
                 <article class="p-3">
                     <section class="grid grid-cols-4">
@@ -36,7 +36,7 @@
                                 <Avatar.Fallback class="absolute inset-0 flex items-center justify-center">{initials}</Avatar.Fallback>
                             </Avatar>
                         </div>
-                        <div class="col-span-3 text-left pl-4">
+                        <div class="col-span-3 text-left pl-4 flex flex-col justify-center">
                             <h2 class="font-medium text-2xl">{name}</h2>
                             <p class="opacity-75">{position}</p>
                         </div>
@@ -48,7 +48,7 @@
         </Popover.Trigger>
         <Portal>
             <Popover.Positioner>
-                <Popover.Content class="card w-96 p-4 bg-surface-100-900 shadow-xl">
+                <Popover.Content class="card max-w-sm p-4 bg-surface-100-900 shadow-xl">
                     <div class="space-y-4">
                         <header class="grid grid-cols-[auto_1fr_auto] gap-4 items-center">
 
@@ -120,7 +120,7 @@
                                             <FileKey class="inline size-4" role="none"  /> GPG Public Key Download
                                         </a>
                                     {:else}
-                                        <p class="flex-none text-xs opacity-60 text-balance max-w-100">
+                                        <p class="flex-none text-xs opacity-60 text-balance max-w-full">
                                             <FingerprintPattern class="inline size-3" role="none"  /> Key Fingerprint: <span class="select-all">{gpgEntry}</span>
                                         </p>
                                     {/if}

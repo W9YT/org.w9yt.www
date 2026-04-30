@@ -38,7 +38,7 @@
 		target="_blank"
 		onclick={(e) => {
 			e.preventDefault();
-			window.open('https://wavelog.w9yt.org/index.php/header_auth/login', '_blank');
+			window.open('https://wavelog.w9yt.org/header_auth/login', '_blank');
 		}}
 	>
 		<button type="button" class="my-5 btn preset-filled">

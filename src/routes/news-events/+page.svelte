@@ -43,7 +43,7 @@
 
 <!-- Content -->
 <div class="mx-auto max-w-3xl pt-5 px-2">
-	<h2 class="my-4 text-2xl font-semibold pb-5">News & Events</h2>
+	<h2 class="my-4 pl-2 text-4xl font-semibold pb-5">News & Events</h2>
 
 	<div class="pl-3">
 		{#each posts as post}
