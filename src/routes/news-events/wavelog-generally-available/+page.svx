@@ -1,0 +1,30 @@
+---
+Title: Wavelog Logging Software, Now Available 
+Published: 2026-05-07 09:00
+Author: Hadley So
+ProfileTag: So
+Excerpt: Wavelog, web based logging software now generally available for all members
+
+---
+
+
+## Wavelog, web based logging
+
+Good news — Wavelog is now available for all members and affiliates! Whether you're logging contacts from your 
+personal setup or operating as part of W9YT, Wavelog gives you a clean, modern, web-based logbook experience.
+
+For School Club Roundup, Wavelog now replaces shared desktop logging on N1MM logger+.
+
+### About Wavelog
+
+Wavelog is designed specifically for amateur radio operators to log their contacts anywhere, anytime. 
+All you need is a web browser and an internet connection to get started. 
+
+It has built-in support for major awards; 
+real-time and post-entry logging modes; and integration with LoTW, eQSL, and QRZ. Built in widgets allow embedding on QRZ.
+
+### Getting Started
+
+Read more on the [Wavelog](/wavelog) page. If you create your account off campus, just send us a quick message and we’ll grant access.
+
+[Log into Wavelog here](https://wavelog.w9yt.org/)

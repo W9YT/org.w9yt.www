@@ -34,13 +34,13 @@ const config = {
 			[
 				addClasses,
 				{
-					h1: 'text-4xl font-medium pb-2 pt-4',
-					h2: 'text-3xl font-medium pb-2 pt-4',
-					h3: 'text-2xl font-medium pb-2 pt-4',
-					h4: 'text-xl pb-2 pt-4',
-					h5: 'text-lg pb-2 pt-4',
+					h1: 'text-3lx lg:text-4xl font-medium pb-2 pt-4',
+					h2: 'text-2xl lg:text-3xl font-medium pb-2 pt-4',
+					h3: 'text-xl lg:text-2xl font-medium pb-2 pt-4',
+					h4: 'text-lg lg:text-xl pb-2 pt-4',
+					h5: 'text-base lg:text-lg pb-2 pt-4',
 					h6: 'text-base pb-2 pt-4',
-					p: 'py-3',
+					p: 'py-3 md:text-lg',
 					ul: `list-inside list-disc pl-3`,
 					ol: 'list-inside list-decimal ml-3',
 					a: 'underline hover:underline-offset-1'

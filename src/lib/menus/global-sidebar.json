@@ -53,12 +53,20 @@
                 "link": "https://wiki.w9yt.org/"
             },
             {
-                "text": "Manage Profile & Account",
-                "link": "/.well-known/manage-account-no-robot.html"
+                "text": "BARS Wavelog",
+                "link": "https://wavelog.w9yt.org/"
             },
             {
-                "text": "About My Account",
+                "text": "About Wavelog Logbook",
+                "link": "/wavelog/"
+            },
+            {
+                "text": "About My BARS Account",
                 "link": "/getting-started/my-account"
+            },
+            {
+                "text": "Manage Profile & Account",
+                "link": "/.well-known/manage-account-no-robot.html"
             },
             {
                 "text": "Reset Email Password",

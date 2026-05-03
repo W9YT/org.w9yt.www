@@ -11,6 +11,9 @@
 		"files.associations": {
 			"*.css": "tailwindcss"
 		},
-		"liveServer.settings.multiRootWorkspaceName": "build"
+		"liveServer.settings.multiRootWorkspaceName": "build",
+		"cSpell.words": [
+			"wavelog"
+		]
 	}
 }
