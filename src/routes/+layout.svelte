@@ -14,6 +14,9 @@
 	import SiteProvider from '$lib/composite/+site-provider.svelte';
 	import Search from '$lib/composite/search/+page.svelte'
 
+	import { FolderGit2, GitPullRequestCreate } from '@lucide/svelte';
+	import path from 'path';
+
 	const currentYear = new Date().getFullYear();
 
 	function globalMenuOnSelect(details: any) {
@@ -90,8 +93,18 @@
 </section>
 
 
-<footer class="p-5 text-sm font-light max-w-500 mx-auto dark:text-gray-400" data-nosnippet>
-	<hr class="py-3 mt-35 md:mt-1">
+<footer class="mt-35 md:mt-1 p-5 text-sm font-light max-w-500 mx-auto dark:text-gray-400" data-nosnippet>
+	<div class="text-right text-gray-500 dark:text-gray-400 px-1">
+		{#if page.url.pathname.startsWith("/news-events")}
+		<a href="https://github.com/W9YT/org.w9yt.www/tree/main/src/routes{page.url.pathname}+page.svx" target="_blank" class="hover:text-black dark:hover:text-white">View Source <FolderGit2 class="inline" size={15} role="none"/></a>
+		{:else}
+		<a href="https://github.com/W9YT/org.w9yt.www/tree/main/src/routes{page.url.pathname}+page.svelte" target="_blank" class="hover:text-black dark:hover:text-white">View Source <FolderGit2 class="inline" size={15} role="none"/></a>
+		{/if}
+		 &emsp13;&emsp13;
+		<a href="https://github.com/W9YT/org.w9yt.www/issues/new?body=Describe+the+problem&title=Visitor+Feedback:+{page.url.pathname}" target="_blank" class="hover:text-black dark:hover:text-white">Open Issue <GitPullRequestCreate class="inline" size={15} role="none"/></a>
+	</div>
+	<hr class="py-3 mt-3">
+
 	<section class="max-w-7xl mx-auto">
 		
 		<p class="font-normal pb-2" data-nosnippet>

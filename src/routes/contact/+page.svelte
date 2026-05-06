@@ -106,9 +106,19 @@
 		</Tabs.Content>
 		<Tabs.Content value="#web" class="mx-auto max-w-2xl">
 			<p class="pb-2">
-				You can email the webmaster <span class="select-all">webmaster@w9yt.org</span>
-				or contact the <SiteProvider/>
+				We welcome feedback and suggestions. Please use the following methods, starting from the most preferable:
 			</p>
+			<ol class="list-decimal list-inside">
+				<li>
+					Open an <a href="https://github.com/W9YT/org.w9yt.www/issues/new?" class="underline" target="_blank">issue on GitHub</a> 
+				</li>
+				<li>
+					Email the webmaster at <span class="select-all">webmaster@w9yt.org</span>
+				</li>
+				<li>
+					Contact the <SiteProvider/>
+				</li>
+			</ol>
 		</Tabs.Content>
 		<Tabs.Content value="#ece" class="mx-auto max-w-2xl">
 			<p class="pb-2">
