@@ -11,7 +11,8 @@ We generated a splat map depicting converage for our 2m repeater on 146.685! Thi
 
 [Open PDF in new tab](/pdfs/w9yt2msplat.pdf)
 
-<iframe
+<embed
+  type="application/pdf"
   src="/pdfs/w9yt2msplat.pdf"
   width="100%"
   height="900"
