@@ -44,7 +44,8 @@
     </a>
   </p>
 
-  <iframe
+  <embed
+    type="application/pdf"
     src="/pdfs/w9yt2msplat.pdf"
     width="100%"
     height="900"
