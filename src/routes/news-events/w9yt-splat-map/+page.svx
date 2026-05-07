@@ -6,7 +6,6 @@ ProfileTag: Culek
 Excerpt: Splat map for 2m Repeater
 ---
 
-# W9YT 2m Repeater Splat Map
 
 We generated a splat map depicting converage for our 2m repeater on 146.685! This document is also listed under our repeater information.
 
