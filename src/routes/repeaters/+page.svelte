@@ -50,7 +50,6 @@
     width="100%"
     height="900"
   class="border rounded-xl border-1 border-gray-400 dark:border-gray-800"
-    title="W9YT Splat Map PDF">
-  </iframe>
+    title="W9YT Splat Map PDF"/>
 
 </div>
