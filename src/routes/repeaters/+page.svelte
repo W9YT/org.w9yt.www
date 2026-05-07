@@ -48,7 +48,7 @@
     src="/pdfs/w9yt2msplat.pdf"
     width="100%"
     height="900"
-    style="border:1px solid #ccc; border-radius:8px;"
+  class="border rounded-xl border-1 border-gray-400 dark:border-gray-800"
     title="W9YT Splat Map PDF">
   </iframe>
 
