@@ -13,19 +13,43 @@
 
 <div class="mx-auto max-w-3xl pt-10 text-lg px-5">
 
-	<h2 class="text-4xl/9 md:text-4xl/15 pb-10 font-semibold">
-		W9YT Madison Area Repeaters
-	</h2>
-	
-	<p class="py-4">
-		146.685 MHz with a PL of 123.0Hz 
-		<br>
-		The location of this repeater is atop Van Hise hall, the tallest building in Madison.
-	</p>
-	<p class="py-4">
-		443.600 MHz with a PL of 123.0Hz.  
-		<br>
-		This repeater also has Echolink capbility in addition to being a DMR node on the Brandmeister network and is also YSF capable.
-	</p>
+  <h2 class="text-4xl/9 md:text-4xl/15 pb-10 font-semibold">
+    W9YT Madison Area Repeaters
+  </h2>
+
+  <p class="py-4">
+    146.685 MHz with a PL of 123.0Hz
+    <br>
+    The location of this repeater is atop Van Hise hall, the tallest building in Madison.
+  </p>
+
+  <p class="py-4">
+    443.600 MHz with a PL of 123.0Hz.
+    <br>
+    This repeater also has Echolink capability in addition to being a DMR node on the Brandmeister network and is also YSF capable.
+  </p>
+
+  <h3 class="text-2xl pt-8 pb-4 font-semibold">
+    W9YT 2m Repeater Splat Map
+  </h3>
+
+  <p class="py-4">
+    <a
+      href="/pdfs/w9yt2msplat.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="underline"
+    >
+      Open PDF in new tab
+    </a>
+  </p>
+
+  <iframe
+    src="/pdfs/w9yt2msplat.pdf"
+    width="100%"
+    height="900"
+    style="border:1px solid #ccc; border-radius:8px;"
+    title="W9YT Splat Map PDF">
+  </iframe>
 
 </div>

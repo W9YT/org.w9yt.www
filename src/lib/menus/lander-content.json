@@ -1,5 +1,11 @@
 [
     {
+        "pretext": "New Map",
+        "title": "W9YT 2m Repeater Splat Map",
+        "body": "View the coverage/splat map for the W9YT 2m repeater.",
+        "link": "/news-events/w9yt-splat-map/"
+    },
+    {
         "pretext": "New Tool",
         "title": "Wavelog, web based logging",
         "body": "Wavelog is now available for all members and affiliates! Wavelog gives you a clean, modern, web-based logbook experience accessible anytime, anywhere with just a browser.",
