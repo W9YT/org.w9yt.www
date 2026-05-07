@@ -18,3 +18,5 @@ We generated a splat map depicting converage for our 2m repeater on 146.685! Thi
   height="900"
   class="border rounded-xl border-1 border-gray-400 dark:border-gray-800"
   title="W9YT Splat Map PDF"/>
+
+![W9YT Repeater Map](/imgs/splat2m.png)

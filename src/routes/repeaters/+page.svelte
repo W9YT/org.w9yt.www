@@ -52,4 +52,5 @@
   class="border rounded-xl border-1 border-gray-400 dark:border-gray-800"
     title="W9YT Splat Map PDF"/>
 
+  <img src="/imgs/splat2m.png">
 </div>
