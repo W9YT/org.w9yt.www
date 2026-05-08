@@ -5,11 +5,17 @@ Author: Skylar Culek
 ProfileTag: Culek
 Excerpt: Splat map for 2m Repeater
 ---
+<script>
+    import splatMap from '$lib/img/splat2m.png'
+</script>
+
 
 
 We generated a splat map depicting converage for our 2m repeater on 146.685! This document is also listed under our repeater information.
 
 [Open PDF in new tab](/pdfs/w9yt2msplat.pdf)
+
+<img src="{splatMap}" alt="W9YT 2M Repeater Splat Map" class="rounded-xl mb-3">
 
 <embed
   type="application/pdf"
@@ -19,4 +25,3 @@ We generated a splat map depicting converage for our 2m repeater on 146.685! Thi
   class="border rounded-xl border-1 border-gray-400 dark:border-gray-800"
   title="W9YT Splat Map PDF"/>
 
-![W9YT Repeater Map](/imgs/splat2m.png)

@@ -1,4 +1,5 @@
 <script lang="ts">
+    import splatMap from '$lib/img/splat2m.png'
 </script>
 
 <svelte:head>
@@ -44,13 +45,14 @@
     </a>
   </p>
 
-  <embed
+    <img src="{splatMap}" alt="W9YT 2M Repeater Splat Map" class="rounded-xl md:m-3 mb-3">
+
+    <embed
     type="application/pdf"
     src="/pdfs/w9yt2msplat.pdf"
     width="100%"
     height="900"
-  class="border rounded-xl border-1 border-gray-400 dark:border-gray-800"
+    class="border rounded-xl border-1 border-gray-400 dark:border-gray-800"
     title="W9YT Splat Map PDF"/>
 
-  <img src="/imgs/splat2m.png">
 </div>
