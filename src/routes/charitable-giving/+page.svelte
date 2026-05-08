@@ -16,17 +16,18 @@
 	<h2 class="pb-10 text-4xl/9 md:text-4xl/15 font-semibold">Donations and Charitable Giving</h2>
 
 	<p class="py-4">
-		For your convenience, The Badger Amateur Radio Society has an online donation system with
+		For your convenience, The Badger Amateur Radio Society has an online donation form with
 		the UW Foundation. The online form allows you to make a tax deductible donation using a credit
-		card.
+		card or digital payment methods.
 	</p>
 	<p class="py-4">
 		Below you will find a button titled "Donate Now". After following this button, you will be
 		taken to the UW Foundations website.
 	</p>
 	<p class="py-4">
-		Please be sure to select “College of Engineering” and direct your gift to the 
-		<b>“Badger Amateur Radio Society Fund”</b>, or your donation may go to the wrong account.
+		Please be sure to select the 
+		<b>Badger Amateur Radio Society Fund</b>, or your donation may go to the wrong account.
+		The fund number is <b>112322467</b> which can be entered into the search bar.
 	</p>
 	<a href="https://secure.supportuw.org/give/" target="_blank">
 		<button type="button" class="btn preset-filled mt-5">
