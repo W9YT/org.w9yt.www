@@ -1,7 +1,8 @@
 <script lang="ts">
 	import IamSupport from '$lib/composite/+iam-support.svelte';
 	import { ArrowRightIcon, TriangleAlertIcon } from '@lucide/svelte';
-	import wizard from '$lib/img/wavelog-wizard-2_4_x.png';
+	import wizardSkip from '$lib/img/wavelog-wizard-skip-2_4_x.png';
+	import clubQSO from '$lib/img/wavelog-club-live-qso-2_4_x.png'
 	import clubSwitch from '$lib/img/wavelog-switch-2_4_x.png';
 </script>
 
@@ -56,42 +57,27 @@
 	</ul>
 	<p class="py-4">
 		On your first login, you will see the Wizard for <b>your personal station</b>, not the W9YT
-		station:
+		station. You can <b>skip this form</b> by selecting skip.
 	</p>
-	<img src={wizard} alt="Wavelog First Login Wizard" class="my-2 rounded-container lg:max-w-8/9" />
-	<p class="py-4">
-		Enter info for your <b>personal</b> station:
-	</p>
-	<ul class="list-inside list-disc py-4">
-		<li>
-			<b>Station Name:</b> Display name, for example "Bucky's Dorm Room Station"
-		</li>
-		<li>
-			<b>Station Callsign:</b> Your personal callsign
-		</li>
-		<li>
-			<b>DXCC:</b> <span class="select-all"><code>United States Of America - K</code></span>
-		</li>
-		<li>
-			<b>Station Zone:</b> <span class="select-all"><code>04 / 08</code></span>
-		</li>
-		<li>
-			<b>Locator:</b> <span class="select-all"><code>EN53hb</code></span>
-		</li>
-	</ul>
+	<img src={wizardSkip} alt="Wavelog First Login Wizard" class="my-2 rounded-container lg:max-w-8/9" />
 
-	<h3 class="pt-6 text-2xl/7 font-semibold md:text-3xl/12">Logging Under W9YT</h3>
 	<p class="py-4">
-		After logging in you can switch to the W9YT club. In the top menu bar, select the <b
+		If the wizard does not pop up, switch manually. In the top menu bar, select the <b
 			>profile icon</b
 		>
 		and click <b>switch to clubstation</b>
 	</p>
 	<img src={clubSwitch} alt="Wavelog menu, switch to clubstation" class="mb-5 rounded-container" />
+
+	<h3 class="pt-6 text-2xl/7 font-semibold md:text-3xl/12">Logging Under W9YT</h3>
+
 	<p class="py-4">
 		Now you can log contacts under the W9YT club callsign by selecting <b>QSO</b> &gt;
 		<b>Live QSO</b>.
 	</p>
+	<img src={clubQSO} alt="Wavelog Clubstation menu, selecting live QSO" class="mb-5 rounded-container" />
+
+
 	<h3 class="pt-6 text-2xl/7 font-semibold md:text-3xl/12">More Information</h3>
 	<p class="py-4">
 		For more information visit the <a
