@@ -93,6 +93,23 @@
 
 </section>
 
+<section class="mx-auto max-w-7xl py-25">
+	<h2 class="text-2xl font-bold md:text-3xl mb-2 px-5 2xl:px-0">
+		Club Station Logbook
+	</h2>
+	<div class="flex flex-col lg:flex-row gap-4">
+		<iframe src="https://wavelog.w9yt.org/visitor/W9YT/mini" title="W9YT Mini Logbook" loading="lazy" height="465px" id="logbookFrame" class="px-1"></iframe>
+		<div class="px-3 lg:px-0 lg:ml-8">
+			<p class="lg:pt-8">
+				Search for your callsign - shows 10 most recent contacts
+				<br><br>
+				More information on our online logging tool, 
+				BARS Wavelog, on the <a href="/wavelog/" class="underline">Wavelog</a> page.
+			</p>
+		</div>
+	</div>
+</section>
+
 <section class="mx-auto max-w-7xl py-25 px-5">
 	<h2 class="text-2xl font-bold tracking-tight md:text-3xl leading-none">
 		Since 1930 &mdash; decades of history and stories
@@ -178,3 +195,9 @@
 		</a>
 	</p>
 </section>
+
+<style>
+	#logbookFrame {
+		width: min(800px, 100vw);
+	}
+</style>
