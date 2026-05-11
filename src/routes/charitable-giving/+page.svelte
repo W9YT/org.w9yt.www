@@ -25,11 +25,9 @@
 		taken to the UW Foundations website.
 	</p>
 	<p class="py-4">
-		Please be sure to select the 
-		<b>Badger Amateur Radio Society Fund</b>, or your donation may go to the wrong account.
-		The fund number is <b>112322467</b> which can be entered into the search bar.
+		The fund number is <b>112322467</b> for the Badger Amateur Radio Society Fund.
 	</p>
-	<a href="https://secure.supportuw.org/give/" target="_blank">
+	<a href="https://supportuw.org/giveto/AmateurRadio" target="_blank">
 		<button type="button" class="btn preset-filled mt-5">
 			<span>Donate Now</span>
 			<ArrowRightIcon size={18} role="none"/>
