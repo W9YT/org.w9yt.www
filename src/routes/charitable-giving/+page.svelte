@@ -22,7 +22,7 @@
 	</p>
 	<p class="py-4">
 		Below you will find a button titled "Donate Now". After following this button, you will be
-		taken to the UW Foundations website.
+		taken to the UW Foundation website.
 	</p>
 	<p class="py-4">
 		The fund number is <b>112322467</b> for the Badger Amateur Radio Society Fund.
