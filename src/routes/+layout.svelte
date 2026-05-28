@@ -5,6 +5,7 @@
 	let { children } = $props();
 	import { page } from '$app/state';
 	import ModeSwitch from '$lib/composite/ModeSwitch/+page.svelte';
+	import GlobalAlert from '$lib/composite/GlobalAlert/+page.svelte';
 
 	import { AppBar } from '@skeletonlabs/skeleton-svelte';
 	import GlobalMenu from '$lib/composite/GlobalMenu/+page.svelte'
@@ -86,6 +87,7 @@
 			<GlobalMenu bind:isOpen={isGlobalMenuActive}></GlobalMenu>
 		</AppBar.Trail>
 	</AppBar.Toolbar>
+	<GlobalAlert/>
 </AppBar>
 
 <section class="min-h-screen" aria-hidden={isGlobalMenuActive ? "true" : undefined}>
