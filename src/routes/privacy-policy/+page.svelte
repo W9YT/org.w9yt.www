@@ -22,7 +22,7 @@
 	</h2>
 
 	<div class="max-w-2xl">
-		<p class="py-2">Last Updated: 6th February 2026</p>
+		<p class="py-2">Last Updated: 6th June 2026 | Published: 6th February 2026</p>
 
 		<p class="py-2">
 			This Privacy Notice for Badger Amateur Radio Society and its affiliates ("we," "us," or
@@ -108,6 +108,24 @@
 			<a href="https://www.hadleyso.com/privacy-policy/" class="underline">privacy policy</a> and 
 			<a href="https://www.hadleyso.com/terms/" class="underline">terms of use</a>.
 		</p>
+		<p class="pt-2">
+			Some BARS members, affiliates, and the service provider (collectively known as BARS Account Managers) 
+			can view and modify all user profiles and most profile details for the purpose of user support, account management, permission management, and other tasks.
+			The following are the current BARS Account Managers:
+		</p>
+		<ul>
+			<li>Skylar Culek</li>
+			<li>Will Standaert</li>
+			<li>Hadley So</li>
+		</ul>
+		<p class="pt-2">
+			BARS Account Managers are:
+		</p>
+		<ul class="list-inside list-disc">
+			<li>usually unable to view or edit your email address</li>
+			<li>able to view your ID from third party authentication services (eg ORCID)</li>
+			<li>able to view and edit your callsign and club identifiers</li>
+		</ul>
 
 		<h3 class="pt-3 text-xl font-medium">Changes to this policy</h3>
 		<p class="py-2">
