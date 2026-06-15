@@ -53,23 +53,33 @@
                 "link": "https://wiki.w9yt.org/"
             },
             {
-                "text": "BARS Wavelog",
-                "link": "https://wavelog.w9yt.org/"
+                "label": "Wavelog",
+                "items": [
+                    {
+                        "text": "Open Wavelog",
+                        "link": "https://wavelog.w9yt.org/"
+                    },
+                    {
+                        "text": "About Wavelog",
+                        "link": "/wavelog/"
+                    }
+                ]
             },
             {
-                "text": "About Wavelog Logbook",
-                "link": "/wavelog/"
+                "label": "Profile & ID",
+                "items": [
+                    {
+                        "text": "About BARS Profile & ID",
+                        "link": "/getting-started/my-account"
+                    },
+                    {
+                        "text": "Manage Profile & ID",
+                        "link": "/.well-known/manage-account-no-robot.html"
+                    }
+                ]
             },
             {
-                "text": "About My BARS Account",
-                "link": "/getting-started/my-account"
-            },
-            {
-                "text": "Manage Profile & Account",
-                "link": "/.well-known/manage-account-no-robot.html"
-            },
-            {
-                "text": "Reset Email Password",
+                "text": "W9YT Email",
                 "link": "https://msspr.w9yt.org/"
             },
             {

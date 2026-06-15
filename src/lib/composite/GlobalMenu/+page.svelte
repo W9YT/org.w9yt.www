@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import menuSidebar from '$lib/menus/global-sidebar.json';
+	import menuSidebarData from '$lib/menus/global-sidebar.json';
 	import { Menu as SvelteMenu, X, ArrowLeft, SearchIcon } from '@lucide/svelte';
 	import { AppBar } from '@skeletonlabs/skeleton-svelte';
 	import { onMount } from 'svelte';
 	import { fade, slide } from 'svelte/transition';
 	import Search from '$lib/composite/search/+page.svelte'
-
 
 	let {isOpen = $bindable(false)} = $props();
 	
@@ -19,6 +18,7 @@
         return () => window.removeEventListener('keydown', handler);
     });
 	let column2 = $state("");
+	let column2title = $state("");
 	let column2done = $state(true);
 
 	let col2class = $derived(column2 ? "md:border-r border-neutral-300 dark:border-neutral-700" : "");
@@ -30,12 +30,53 @@
 			goto(path);
 		}
 		menuClose();
-		column2 = "";
 	};
 	const menuClose = () => {
+		menuSidebar = menuSidebarData;
 		isOpen = false;
 		column2 = "";
 	}
+
+	function click1(col2: string) {
+		column2 = col2;
+		menuSidebar = menuSidebarData;
+	}
+
+	// Menu types
+	type MenuSection = {
+		label: string;
+		items: MenuItem[];
+	};
+
+	type MenuItem =
+		| MenuSection
+		| { text: string; link: string };
+
+	let menuSidebar: MenuSection[] = $state(menuSidebarData);
+
+
+	function move3to2col(col1: string, col2: string) {
+		// Find the index of the top-level section
+		const idx = menuSidebar.findIndex(s => s.label === col1);
+		if (idx === -1) return;
+
+		const level1 = menuSidebar[idx];
+
+		// Find the nested section (must have a label)
+		const level2 = level1.items.find(
+			(item): item is MenuSection => "label" in item && item.label === col2
+		);
+		if (!level2) return;
+
+		// Replace ONLY the matching section's items
+		menuSidebar[idx] = {
+			label: level1.label,
+			items: level2.items
+		};
+		column2title = col2;
+	}
+
+
 </script>
 
 <svelte:head></svelte:head>
@@ -90,7 +131,7 @@
 					{#each menuSidebar as group, i}
 						{#if (group.label)}
 							<div class="border-b md:border-b-0 border-neutral-300 dark:border-neutral-700 w-full pr-2">
-								<button class="w-full p-3 px-7 m-1 hover:bg-(--theme-red-100)/50 rounded-2xl text-left whitespace-nowrap overflow-hidden" onclick={() => (column2 = group.label)}>
+								<button class="w-full p-3 px-7 m-1 hover:bg-(--theme-red-100)/50 rounded-2xl text-left whitespace-nowrap overflow-hidden" onclick={() => click1(group.label)}>
 									{group.label}
 								</button>
 							</div>
@@ -116,19 +157,26 @@
 				{#if column2 != ""}
 					<div class="{col2class} md:px-4 col-span-2 md:pt-5 overflow-y-scroll scrollbarHide max-h-full" transition:slide={{ axis: 'x', duration: 800 }} onoutroend={() => column2done = true}>
 
-						<p class="mt-1 py-3 pl-3 md:block hidden whitespace-nowrap overflow-hidden">{column2}</p>
+						<p class="mt-1 py-3 pl-3 md:block hidden whitespace-nowrap overflow-hidden">{column2title || column2}</p>
 						<button class="border border-neutral-300 dark:border-neutral-700 py-3 pl-5 mb-4 md:hidden flex items-center gap-3 w-full whitespace-nowrap overflow-hidden" onclick={() => (column2done = false, column2 = "")}>
 							<div class="h-full border-r border-neutral-400 dark:border-neutral-600 pr-3 flex items-center">
 								<ArrowLeft class="size-5" />
 							</div>
-							{column2}
+							{column2title || column2}
 						</button>
 						{#each menuSidebar as group, i}
 							{#if group.label === column2}
 								{#each group.items as item}
-									<button class="w-full p-3 px-7 m-1 hover:bg-(--theme-red-100)/50 rounded-2xl text-left text-lg md:text-2xl font-normal whitespace-nowrap overflow-hidden" onclick={() => (menuNavigate(item.link))}>
-										{item.text}
-									</button>
+									{#if 'link' in item}
+										<button class="w-full p-3 px-7 m-1 hover:bg-(--theme-red-100)/50 rounded-2xl text-left text-lg md:text-2xl font-normal whitespace-nowrap overflow-hidden" onclick={() => (menuNavigate(item.link))}>
+											{item.text}
+										</button>
+									{:else}
+										<!-- Handle transform 3rd level data to 2nd level column  -->
+										<button class="w-full p-3 px-7 m-1 hover:bg-(--theme-red-100)/50 rounded-2xl text-left text-lg md:text-2xl font-normal whitespace-nowrap overflow-hidden" onclick={() => move3to2col(column2, item.label)}>
+											{item.label}
+										</button>
+									{/if}
 								{/each}
 							{/if}
 						{/each}
