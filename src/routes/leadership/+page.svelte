@@ -1,14 +1,16 @@
 <script lang="ts">
 	// UPDATE THESE TWO EVERY YEAR
-	let maxYear = 2026;
-	let yearSelect = $state('2026');
+	let maxYear = 2027;
+	let yearSelect = $state(maxYear.toString());
 
 	import { Tabs } from '@skeletonlabs/skeleton-svelte';
 	import Behdad from '$lib/composite/profiles/+behdad.svelte';
+	import Berg from '$lib/composite/profiles/+berg.svelte';
 	import Bouvy from '$lib/composite/profiles/+bouvy.svelte';
 	import Culek from '$lib/composite/profiles/+culek.svelte';
 	import Czerwonka from '$lib/composite/profiles/+czerwonka.svelte';
 	import Daruwalla from '$lib/composite/profiles/+daruwalla.svelte';
+	import Gibson from '$lib/composite/profiles/+gibson.svelte';
 	import Jamieson from '$lib/composite/profiles/+jamieson.svelte';
 	import Kraemer from '$lib/composite/profiles/+kraemer.svelte';
 	import Pilcher from '$lib/composite/profiles/+pilcher.svelte';
@@ -41,12 +43,20 @@
 		</Tabs.List>
 
 		<!-- ADD A NEW TABS.CONTENT WITH YEAR EVERY YEAR -->
+		<Tabs.Content value="2027">
+			<Behdad/>
+			<Czerwonka/>
+			<Standaert/>
+			<Berg/>
+			<Gibson/>
+		</Tabs.Content>
+
 		<Tabs.Content value="2026">
 			<Behdad/>
 			<Czerwonka/>
 			<Culek/>
 			<So/>
-			<Standaert/>
+			<Standaert position="Treasurer"/>
 		</Tabs.Content>
 
 		<Tabs.Content value="2025">

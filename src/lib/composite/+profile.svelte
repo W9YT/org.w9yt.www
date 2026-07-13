@@ -24,7 +24,7 @@
 
 <div class="inline-flex p-2">
 
-    <Popover>
+    <Popover positioning={{ placement: 'bottom', flip: false }}>
         <Popover.Trigger aria-label="Open {name} profile and bio">
             <div class="block overflow-hidden card border-[1px] border-surface-200-800 preset-filled-surface-100-900 card-hover max-w-screen md:min-w-fit">
                 
