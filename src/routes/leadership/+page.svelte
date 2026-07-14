@@ -84,4 +84,8 @@
 		</Tabs.Content>
 
 	</Tabs>
+
+	<p class="pt-10 text-gray-600 dark:text-gray-200 text-sm">
+		For 501(c)(3) information and leadership see <a href="/501-c3-governance/" class="underline">501(c)(3) governance</a> 
+	</p>
 </div>
