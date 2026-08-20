@@ -26,7 +26,9 @@
 	
 	<p class="py-4">
 		Visit our WIN page to add yourself to the roster, and join the Discord. 
-		Meetings for Spring 2026 are every Tuesday at 4PM in <a class="underline" href="/room-1601/">the Shack</a>.
+		<br><br>
+		Meetings for Fall 2026 are on the second and fourth Tuesday of each month, from 6PM to 8PM in <a class="underline" href="/room-1601/">the Shack</a>.
+		On Tuesdays without meetings, we will be having an open shack time from 6PM to 8PM.
 	</p>
 	<a href="https://win.wisc.edu/organization/bars" target="_blank">
 		<button type="button" class="btn preset-filled mt-1">
