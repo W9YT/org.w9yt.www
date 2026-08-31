@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+</head>
+
+<body>
+    <script>
+    const p = new URLSearchParams(window.location.search).get("p");
+    if (p) {
+        window.location.replace(`https://www.w9yt.org${p}`);
+    } else {
+        window.location.replace("https://www.w9yt.org");
+    }
+
+
+    </script>
+
+</body>
+
+</html>
