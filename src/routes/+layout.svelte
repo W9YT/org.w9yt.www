@@ -29,8 +29,7 @@
 	import ModeSwitch from '$lib/composite/ModeSwitch/+page.svelte';
 	import GlobalAlert from '$lib/composite/GlobalAlert/+page.svelte';
 
-	import { AppBar, Tooltip } from '@skeletonlabs/skeleton-svelte';
-	import { Menu, Portal } from '@skeletonlabs/skeleton-svelte';
+	import { AppBar, Popover, Menu, Portal } from '@skeletonlabs/skeleton-svelte';
 	import GlobalMenu from '$lib/composite/GlobalMenu/+page.svelte'
 
 	import menuGlobal from '$lib/menus/global-center.json';
@@ -38,7 +37,7 @@
 	import SiteProvider from '$lib/composite/+site-provider.svelte';
 	import Search from '$lib/composite/search/+page.svelte'
 
-	import { FolderGit2, GitPullRequestCreate, User, ShieldQuestionMark } from '@lucide/svelte';
+	import { FolderGit2, GitPullRequestCreate, User, ShieldQuestionMark, XIcon } from '@lucide/svelte';
 	import { onMount } from 'svelte';
 
 	const currentYear = new Date().getFullYear();
@@ -104,19 +103,43 @@
 				<div class="placeholder size-8 animate-pulse [animation-duration:1s] hidden sm:block w-22 justify-center"></div>
 			{:else if $authError}
 				<div class="rounded-md p-2 px-3 transition-colors hover:bg-surface-200-800 hidden sm:block">
-					<Tooltip>
-						<Tooltip.Trigger class=""><ShieldQuestionMark class="inline size-5" /></Tooltip.Trigger>
+
+
+					<Popover>
+						<Popover.Trigger><ShieldQuestionMark class="inline size-5" /></Popover.Trigger>
 						<Portal>
-							<Tooltip.Positioner class="z-20!">
-								<Tooltip.Content class="card bg-surface-100-900 p-2 shadow-xl max-w-screen w-90">
-									<span class="">Login / authentication status unknown. There was an error fetching your authentication status.</span>
-									<Tooltip.Arrow class="[--arrow-size:--spacing(2)] [--arrow-background:var(--color-surface-100-900)]">
-										<Tooltip.ArrowTip />
-									</Tooltip.Arrow>
-								</Tooltip.Content>
-							</Tooltip.Positioner>
+							<Popover.Positioner class="z-20!">
+								<Popover.Content class="card w-96 p-4 bg-surface-100-900 shadow-xl">
+									<div class="space-y-4">
+										<header class="grid grid-cols-[auto_1fr_auto] gap-4 items-center">
+											<div>
+												<b>Auth Status Unknown</b>
+											</div>
+											<div>
+
+											</div>
+											<Popover.CloseTrigger class="btn-icon hover:preset-tonal self-start">
+												<XIcon class="size-4" />
+											</Popover.CloseTrigger>
+										</header>
+										<Popover.Description>
+											<p>
+												There was an error fetching your authentication status.
+											</p>
+											<br>
+											<p>
+												To log out, visit <button class="underline" onclick={() => window.open('/.well-known/manage-account-no-robot.html', '_blank')}>manage account</button>,
+												select your name from the top right, then click 'Sign out'.
+											</p>
+										</Popover.Description>
+									</div>
+									<Popover.Arrow class="[--arrow-size:--spacing(2)] [--arrow-background:var(--color-surface-100-900)]">
+										<Popover.ArrowTip />
+									</Popover.Arrow>
+								</Popover.Content>
+							</Popover.Positioner>
 						</Portal>
-					</Tooltip>
+					</Popover>
 				</div>
 			{:else if $authenticated}
 				<Menu>
