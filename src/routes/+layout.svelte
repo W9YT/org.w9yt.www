@@ -106,10 +106,10 @@
 
 
 					<Popover>
-						<Popover.Trigger><ShieldQuestionMark class="inline size-5" /></Popover.Trigger>
+						<Popover.Trigger aria-label="Authentication status unknown"><ShieldQuestionMark class="inline size-5" role="none" /></Popover.Trigger>
 						<Portal>
 							<Popover.Positioner class="z-20!">
-								<Popover.Content class="card w-96 p-4 bg-surface-100-900 shadow-xl">
+								<Popover.Content class="card w-96 p-4 bg-surface-100-900 shadow-xl" aria-label="Authentication status error details">
 									<div class="space-y-4">
 										<header class="grid grid-cols-[auto_1fr_auto] gap-4 items-center">
 											<div>
@@ -118,8 +118,8 @@
 											<div>
 
 											</div>
-											<Popover.CloseTrigger class="btn-icon hover:preset-tonal self-start">
-												<XIcon class="size-4" />
+											<Popover.CloseTrigger class="btn-icon hover:preset-tonal self-start" aria-label="Close">
+												<XIcon class="size-4" role="none" />
 											</Popover.CloseTrigger>
 										</header>
 										<Popover.Description>
@@ -144,7 +144,7 @@
 			{:else if $authenticated}
 				<Menu>
 					<Menu.Trigger class="rounded-md p-2 transition-colors hover:bg-surface-200-800 hidden sm:block">
-						<User class="inline" /> 
+						<User class="inline" role="none" /> 
 						<span class="hidden sm:inline xl:hidden">{initials($user?.name) ?? $user?.username} </span>
 						<span class="hidden xl:inline">{$user?.name ?? $user?.username} </span>
 					</Menu.Trigger>
@@ -174,7 +174,7 @@
 			{:else}
 				<Menu>
 					<Menu.Trigger class="rounded-md p-2 transition-colors hover:bg-surface-200-800 hidden sm:block">
-						<User class="inline" /> 
+						<User class="inline" role="none" /> 
 						Log in
 					</Menu.Trigger>
 					<Portal>
