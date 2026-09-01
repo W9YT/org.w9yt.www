@@ -11,7 +11,9 @@
 		user,
 		login,
 		logout,
-		authError
+		authError,
+		reCheckAuth,
+		registerAccount
 	} from '$lib/auth/auth';
 	import menuLoginData from '$lib/menus/login-target.json';
 
@@ -59,6 +61,21 @@
 
 	onMount(() => {
 		initAuth();
+
+			let checking = false;
+			const interval = setInterval(async () => {
+				if (checking) return;
+
+				checking = true;
+
+				try {
+					await reCheckAuth();
+				} finally {
+					checking = false;
+				}
+			}, 30_000);
+
+			return () => clearInterval(interval);
 	});
 </script>
 
@@ -192,8 +209,11 @@
 									<Menu.ItemText>Manage profile</Menu.ItemText>
 								</Menu.Item>
 								<Menu.Separator />
+								<Menu.Item value="register" onclick={registerAccount}>
+									<Menu.ItemText>Create Account</Menu.ItemText>
+								</Menu.Item>
 								<Menu.Item value="login" onclick={login}>
-									<Menu.ItemText>Log In / Sign Up</Menu.ItemText>
+									<Menu.ItemText>Log In</Menu.ItemText>
 								</Menu.Item>
 							</Menu.Content>
 						</Menu.Positioner>
