@@ -13,7 +13,8 @@
 		logout,
 		authError,
 		reCheckAuth,
-		registerAccount
+		registerAccount,
+		accountManagement
 	} from '$lib/auth/auth';
 	import menuLoginData from '$lib/menus/login-target.json';
 
@@ -145,7 +146,7 @@
 											</p>
 											<br>
 											<p>
-												To log out, visit <button class="underline" onclick={() => window.open('/.well-known/manage-account-no-robot.html', '_blank')}>manage account</button>,
+												To log out, visit <button class="underline" onclick={() => accountManagement()}>manage account</button>,
 												select your name from the top right, then click 'Sign out'.
 											</p>
 										</Popover.Description>
@@ -176,7 +177,7 @@
 									</a>
 								{/each}
 								<Menu.Separator />
-								<Menu.Item value="manage" onclick={() => window.open('/.well-known/manage-account-no-robot.html')}>
+								<Menu.Item value="manage" onclick={() => accountManagement()}>
 									<Menu.ItemText>Manage profile</Menu.ItemText>
 								</Menu.Item>
 								<Menu.Separator />
@@ -205,7 +206,7 @@
 									</a>
 								{/each}
 								<Menu.Separator />
-								<Menu.Item value="manage" onclick={() => window.open('/.well-known/manage-account-no-robot.html')}>
+								<Menu.Item value="manage" onclick={() => accountManagement()}>
 									<Menu.ItemText>Manage profile</Menu.ItemText>
 								</Menu.Item>
 								<Menu.Separator />

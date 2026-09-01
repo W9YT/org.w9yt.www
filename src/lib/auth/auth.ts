@@ -73,3 +73,7 @@ export async function reCheckAuth() {
 export async function registerAccount() {
 	return keycloak.register();
 }
+
+export async function accountManagement() {
+	return keycloak.accountManagement();
+}
