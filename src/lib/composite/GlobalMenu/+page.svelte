@@ -8,7 +8,14 @@
 	import Search from '$lib/composite/search/+page.svelte'
 
 	let {isOpen = $bindable(false)} = $props();
-	
+
+	import {
+		authenticated,
+		user,
+		logout,
+		authError
+	} from '$lib/auth/auth';
+
 	onMount(() => {
         const handler = (e: { key: string; }) => {
             if (e.key === 'Escape') menuClose();
@@ -128,6 +135,21 @@
 				<!-- COL 1 -->
 				<div class="md:border-r border-neutral-300 dark:border-neutral-700 md:px-4 md:pt-5 overflow-y-scroll scrollbarHide max-h-full {column2 || !column2done ? 'hidden md:block' : ''}" transition:slide={{ axis: 'x', duration: 900 }} onoutroend={() => column2done = true}>
 
+
+					{#if $authenticated && !$authError}
+						<div class="border-b md:border-b-0 border-neutral-300 dark:border-neutral-700 w-full pr-2 py-2 md:hidden">
+							<button class="w-full p-3 px-7 m-1 hover:bg-(--theme-red-100)/50 rounded-2xl text-left whitespace-nowrap overflow-hidden" onclick={logout}>
+								Welcome, {$user?.name}
+								<br>
+								<span class="text-base font-light">
+									To log out, tap here
+								</span>
+							</button>
+						</div>
+						<div class="p-3 px-7 mb-4 pb-4 border-b border-neutral-300 dark:border-neutral-700 hidden md:block whitespace-nowrap overflow-hidden">
+							Welcome, {$user?.name}
+						</div>
+					{/if}
 					{#each menuSidebar as group, i}
 						{#if (group.label)}
 							<div class="border-b md:border-b-0 border-neutral-300 dark:border-neutral-700 w-full pr-2">

@@ -1,4 +1,5 @@
 <script>
+	import { accountManagement } from '$lib/auth/auth';
 	import IamSupport from '$lib/composite/+iam-support.svelte';
 	import { ArrowRightIcon, ChevronRight } from '@lucide/svelte';
 </script>
@@ -25,7 +26,7 @@
 	<button
 		type="button"
 		class="mt-5 btn preset-filled-surface-200-800 py-2"
-		onclick={() => window.open('/.well-known/manage-account-no-robot.html', '_blank')}
+		onclick={() => accountManagement()}
 	>
 		<span>Manage profile & account</span>
 		<ChevronRight size={18} role="none" />

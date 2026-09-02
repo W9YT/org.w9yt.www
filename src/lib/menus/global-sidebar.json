@@ -74,7 +74,7 @@
                     },
                     {
                         "text": "Manage Profile & ID",
-                        "link": "/.well-known/manage-account-no-robot.html"
+                        "link": "/getting-started/my-account/manage-go"
                     }
                 ]
             },

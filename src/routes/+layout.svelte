@@ -4,10 +4,35 @@
 
 	let { children } = $props();
 	import { page } from '$app/state';
+	import {
+		initAuth,
+		initialized,
+		authenticated,
+		user,
+		login,
+		logout,
+		authError,
+		reCheckAuth,
+		registerAccount,
+		accountManagement
+	} from '$lib/auth/auth';
+	import menuLoginData from '$lib/menus/login-target.json';
+
+	function initials(name?: string) {
+		if (!name) return '';
+
+		return name
+			.split(' ')
+			.map((part) => part[0])
+			.join('')
+			.toUpperCase()
+			.slice(0, 2);
+	}
+
 	import ModeSwitch from '$lib/composite/ModeSwitch/+page.svelte';
 	import GlobalAlert from '$lib/composite/GlobalAlert/+page.svelte';
 
-	import { AppBar } from '@skeletonlabs/skeleton-svelte';
+	import { AppBar, Popover, Menu, Portal } from '@skeletonlabs/skeleton-svelte';
 	import GlobalMenu from '$lib/composite/GlobalMenu/+page.svelte'
 
 	import menuGlobal from '$lib/menus/global-center.json';
@@ -15,21 +40,11 @@
 	import SiteProvider from '$lib/composite/+site-provider.svelte';
 	import Search from '$lib/composite/search/+page.svelte'
 
-	import { FolderGit2, GitPullRequestCreate } from '@lucide/svelte';
-	import path from 'path';
+	import { FolderGit2, GitPullRequestCreate, User, ShieldQuestionMark, XIcon } from '@lucide/svelte';
+	import { onMount } from 'svelte';
 
 	const currentYear = new Date().getFullYear();
 
-	function globalMenuOnSelect(details: any) {
-		console.log(details);
-		if (details.value .includes("://")) {
-			window.location.href = details.value;
-		} else if (details.value.includes("mailto:")) {
-			window.location.href = details.value;
-		} else {
-			goto(details.value);
-		}
-	}
 
 	let isSearchBarActive = $state(false);
 	let isGlobalMenuActive = $state(false);
@@ -43,6 +58,25 @@
 			headlineClass = "";
 			logoClass = "";
 		}
+	});
+
+	onMount(() => {
+		initAuth();
+
+			let checking = false;
+			const interval = setInterval(async () => {
+				if (checking) return;
+
+				checking = true;
+
+				try {
+					await reCheckAuth();
+				} finally {
+					checking = false;
+				}
+			}, 30_000);
+
+			return () => clearInterval(interval);
 	});
 </script>
 
@@ -82,6 +116,113 @@
 		</AppBar.Headline>
 		<AppBar.Trail>
 			<Search bind:isActive={isSearchBarActive} fullScreen="true" aria-label="Search W9YT" buttonIconClass="hidden sm:block" />
+
+			{#if !$initialized}
+				<div class="placeholder size-8 animate-pulse [animation-duration:1s] hidden sm:block w-22 justify-center"></div>
+			{:else if $authError}
+				<div class="rounded-md p-2 px-3 transition-colors hover:bg-surface-200-800 hidden sm:block">
+
+
+					<Popover>
+						<Popover.Trigger aria-label="Authentication status unknown"><ShieldQuestionMark class="inline size-5" role="none" /></Popover.Trigger>
+						<Portal>
+							<Popover.Positioner class="z-20!">
+								<Popover.Content class="card w-96 p-4 bg-surface-100-900 shadow-xl" aria-label="Authentication status error details">
+									<div class="space-y-4">
+										<header class="grid grid-cols-[auto_1fr_auto] gap-4 items-center">
+											<div>
+												<b>Auth Status Unknown</b>
+											</div>
+											<div>
+
+											</div>
+											<Popover.CloseTrigger class="btn-icon hover:preset-tonal self-start" aria-label="Close">
+												<XIcon class="size-4" role="none" />
+											</Popover.CloseTrigger>
+										</header>
+										<Popover.Description>
+											<p>
+												There was an error fetching your authentication status.
+											</p>
+											<br>
+											<p>
+												To log out, visit <button class="underline" onclick={() => accountManagement()}>manage account</button>,
+												select your name from the top right, then click 'Sign out'.
+											</p>
+										</Popover.Description>
+									</div>
+									<Popover.Arrow class="[--arrow-size:--spacing(2)] [--arrow-background:var(--color-surface-100-900)]">
+										<Popover.ArrowTip />
+									</Popover.Arrow>
+								</Popover.Content>
+							</Popover.Positioner>
+						</Portal>
+					</Popover>
+				</div>
+			{:else if $authenticated}
+				<Menu>
+					<Menu.Trigger class="rounded-md p-2 transition-colors hover:bg-surface-200-800 hidden sm:block">
+						<User class="inline" role="none" /> 
+						<span class="hidden sm:inline xl:hidden">{initials($user?.name) ?? $user?.username} </span>
+						<span class="hidden xl:inline">{$user?.name ?? $user?.username} </span>
+					</Menu.Trigger>
+					<Portal>
+						<Menu.Positioner class="pt-3">
+							<Menu.Content>
+								{#each menuLoginData as item}
+									<a href={item.link}>
+										<Menu.Item value={item.label}>
+											<Menu.ItemText>Open {item.label}</Menu.ItemText>
+										</Menu.Item>
+									</a>
+								{/each}
+								<Menu.Separator />
+								<Menu.Item value="manage" onclick={() => accountManagement()}>
+									<Menu.ItemText>Manage profile</Menu.ItemText>
+								</Menu.Item>
+								<Menu.Separator />
+								<Menu.Item value="logout" onclick={logout}>
+									<Menu.ItemText>Log Out</Menu.ItemText>
+								</Menu.Item>
+							</Menu.Content>
+						</Menu.Positioner>
+					</Portal>
+				</Menu>
+
+			{:else}
+				<Menu>
+					<Menu.Trigger class="rounded-md p-2 transition-colors hover:bg-surface-200-800 hidden sm:block">
+						<User class="inline" role="none" /> 
+						Log in
+					</Menu.Trigger>
+					<Portal>
+						<Menu.Positioner class="pt-3">
+							<Menu.Content>
+								{#each menuLoginData as item}
+									<a href={item.link}>
+										<Menu.Item value={item.label}>
+											<Menu.ItemText>Log in to {item.label}</Menu.ItemText>
+										</Menu.Item>
+									</a>
+								{/each}
+								<Menu.Separator />
+								<Menu.Item value="manage" onclick={() => accountManagement()}>
+									<Menu.ItemText>Manage profile</Menu.ItemText>
+								</Menu.Item>
+								<Menu.Separator />
+								<Menu.Item value="register" onclick={registerAccount}>
+									<Menu.ItemText>Create Account</Menu.ItemText>
+								</Menu.Item>
+								<Menu.Item value="login" onclick={login}>
+									<Menu.ItemText>Log In</Menu.ItemText>
+								</Menu.Item>
+							</Menu.Content>
+						</Menu.Positioner>
+					</Portal>
+				</Menu>
+
+			{/if}
+
 			<ModeSwitch></ModeSwitch>
 
 			<GlobalMenu bind:isOpen={isGlobalMenuActive}></GlobalMenu>

@@ -43,6 +43,7 @@
 	},
 	"dependencies": {
 		"@lucide/svelte": "^0.563.1",
+		"keycloak-js": "^26.2.4",
 		"rehype-add-classes": "^1.0.0"
 	}
 }
