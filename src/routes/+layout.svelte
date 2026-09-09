@@ -164,7 +164,7 @@
 					<Menu.Trigger class="rounded-md p-2 transition-colors hover:bg-surface-200-800 hidden sm:block">
 						<User class="inline" role="none" /> 
 						<span class="hidden sm:inline xl:hidden">{initials($user?.name) ?? $user?.username} </span>
-						<span class="hidden xl:inline">{$user?.name ?? $user?.username} </span>
+						<span class="hidden xl:inline">{$user?.name ?? $user?.username} </span>&emsp14;
 					</Menu.Trigger>
 					<Portal>
 						<Menu.Positioner class="pt-3">
@@ -193,7 +193,7 @@
 				<Menu>
 					<Menu.Trigger class="rounded-md p-2 transition-colors hover:bg-surface-200-800 hidden sm:block">
 						<User class="inline" role="none" /> 
-						Log in
+						Log in&emsp14;
 					</Menu.Trigger>
 					<Portal>
 						<Menu.Positioner class="pt-3">
@@ -210,10 +210,27 @@
 									<Menu.ItemText>Manage profile</Menu.ItemText>
 								</Menu.Item>
 								<Menu.Separator />
-								<Menu.Item value="register" onclick={registerAccount}>
-									<Menu.ItemText>Create Account</Menu.ItemText>
-								</Menu.Item>
-								<Menu.Item value="login" onclick={login}>
+								<Menu>
+									<Menu.TriggerItem value="registerOptions">
+										<Menu.ItemText>Create Account</Menu.ItemText>
+									</Menu.TriggerItem>
+									<Portal>
+										<Menu.Positioner>
+											<Menu.Content>
+												<Menu.Item value="registerDiscord" onclick={() => {login("discord-il")}}>
+													<Menu.ItemText>With Discord</Menu.ItemText>
+												</Menu.Item>
+												<Menu.Item value="registerUsername" onclick={registerAccount}>
+													<Menu.ItemText>With Username</Menu.ItemText>
+												</Menu.Item>
+												<Menu.Item value="registerOther" onclick={() => {login(null)}}>
+													<Menu.ItemText>With Other Provider</Menu.ItemText>
+												</Menu.Item>
+											</Menu.Content>
+										</Menu.Positioner>
+									</Portal>
+								</Menu>
+								<Menu.Item value="login" onclick={() => {login(null)}}>
 									<Menu.ItemText>Log In</Menu.ItemText>
 								</Menu.Item>
 							</Menu.Content>

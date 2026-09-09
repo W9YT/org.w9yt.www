@@ -75,6 +75,13 @@
   --theme-red-a75: rgba(197, 5, 12, 0.75);
 }
 
+@layer base {
+	:focus-visible {
+		outline: 2px solid var(--color-primary-500);
+	}
+}
+
+
 .scrollbarHide {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox, Safari 18.2+, Chromium 121+ */
