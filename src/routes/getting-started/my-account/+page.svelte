@@ -1,7 +1,8 @@
 <script>
-	import { accountManagement } from '$lib/auth/auth';
+	import { accountManagement, login, registerAccount } from '$lib/auth/auth';
 	import IamSupport from '$lib/composite/+iam-support.svelte';
-	import { ArrowRightIcon, ChevronRight } from '@lucide/svelte';
+	import { ChevronRight } from '@lucide/svelte';
+	import { Menu, Portal } from '@skeletonlabs/skeleton-svelte';
 </script>
 
 <svelte:head>
@@ -19,8 +20,7 @@
 		logging software.
 	</p>
 	<p class="py-4">
-		If you're looking to manage your profile, click the button below. To create an account, select 
-        <span class="italic">create an account</span> after clicking the button below.
+		If you're looking to manage your profile or create an account, click the buttons below. 
 	</p>
 
 	<button
@@ -31,6 +31,27 @@
 		<span>Manage profile & account</span>
 		<ChevronRight size={18} role="none" />
 	</button>
+
+	<Menu>
+		<Menu.Trigger class="mt-5 btn preset-filled-surface-200-800 py-2">
+			Create account <ChevronRight size={18} role="none" />
+		</Menu.Trigger>
+		<Portal>
+			<Menu.Positioner>
+				<Menu.Content>
+					<Menu.Item value="registerDiscord" onclick={() => {login("discord-il")}}>
+						<Menu.ItemText>With Discord</Menu.ItemText>
+					</Menu.Item>
+					<Menu.Item value="registerUsername" onclick={registerAccount}>
+						<Menu.ItemText>With Username</Menu.ItemText>
+					</Menu.Item>
+					<Menu.Item value="registerOther" onclick={() => {login(null)}}>
+						<Menu.ItemText>With Other Provider</Menu.ItemText>
+					</Menu.Item>
+				</Menu.Content>
+			</Menu.Positioner>
+		</Portal>
+	</Menu>
 
 	<h3 class="pt-6 text-2xl/7 font-semibold md:text-3xl/12">UW-Madison Network</h3>
 	<p class="py-4">
