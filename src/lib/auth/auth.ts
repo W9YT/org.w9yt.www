@@ -44,9 +44,16 @@ export async function initAuth() {
 	}
 }
 
-export function login() {
+export function login(idpHint: string | null = null) {
 	if (!browser) return;
 
+	if (idpHint != null) {
+		return keycloak.login(
+			idpHint != null
+				? { idpHint }
+				: undefined
+		);
+	}
 	return keycloak.login();
 }
 
