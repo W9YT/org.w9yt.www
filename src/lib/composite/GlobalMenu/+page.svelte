@@ -3,7 +3,6 @@
 	import menuSidebarData from '$lib/menus/global-sidebar.json';
 	import { Menu as SvelteMenu, X, ArrowLeft, SearchIcon } from '@lucide/svelte';
 	import { AppBar } from '@skeletonlabs/skeleton-svelte';
-	import { onMount } from 'svelte';
 	import { fade, slide } from 'svelte/transition';
 	import Search from '$lib/composite/search/+page.svelte'
 
@@ -16,14 +15,6 @@
 		authError
 	} from '$lib/auth/auth';
 
-	onMount(() => {
-        const handler = (e: { key: string; }) => {
-            if (e.key === 'Escape') menuClose();
-            if (e.key === 'm') isOpen = true;
-        };
-        window.addEventListener('keydown', handler);
-        return () => window.removeEventListener('keydown', handler);
-    });
 	let column2 = $state("");
 	let column2title = $state("");
 	let column2done = $state(true);
