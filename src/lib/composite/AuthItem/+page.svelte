@@ -34,6 +34,18 @@
     let {isOpen = $bindable(false)} = $props();
 
 	onMount(() => {
+        const params = new URLSearchParams(window.location.search);
+
+        if (params.has('discord-component-embed')) {
+            const embedSelection = params.get('discord-component-embed');
+            if (embedSelection != null) {
+                const result = menuLoginData.find(item => item.query === embedSelection);
+                window.location.replace(result?.link.toString() ?? "https://www.w9yt.org");
+                return;
+            }
+            
+        }
+
 		initAuth();
 
 			let checking = false;
