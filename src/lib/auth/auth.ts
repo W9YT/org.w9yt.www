@@ -33,6 +33,7 @@ export async function initAuth() {
 			user.set({
 				username: keycloak.tokenParsed?.preferred_username,
 				name: keycloak.tokenParsed?.name,
+				callsign: keycloak.tokenParsed?.callsign,
 				email: keycloak.tokenParsed?.email
 			});
 		}

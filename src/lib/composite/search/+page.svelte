@@ -289,7 +289,7 @@
 	<div class="{wrapperClass}" transition:slide={{ axis: 'y', duration: 300 }}>
 		<Combobox
 			class="{boxClass} max-w-sm min-w-2xs px-2 {hideSearchInput} bg-[var(--color-surface-100-900)]"
-			placeholder="Search Wiki..."
+			placeholder="Search..."
 			{collection}
 			{onOpenChange}
 			{onInputValueChange}
@@ -385,7 +385,7 @@
 
 				<Combobox
 					class="{hideSearchInput} bg-[var(--color-surface-100-900)] overflow-auto"
-					placeholder="Type to search Wiki..."
+					placeholder="Type to search..."
 					{collection}
 					{onOpenChange}
 					{onInputValueChange}
