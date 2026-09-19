@@ -148,7 +148,7 @@
                     {#if !$authenticated}
                     <div class="m-3 rounded-lg border border-gray-200 p-4 dark:border-gray-700">
                         <h3 class="mb-5 flex items-center justify-center gap-2 text-xl font-semibold">
-                            <UserPlus size={20} />
+                            <UserPlus size={20} role="none" />
                             Register
                         </h3>
 
@@ -158,7 +158,7 @@
                                 class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg"
                                 onclick={() => login('discord-il')}
                             >
-                                <BotMessageSquare size={18} />
+                                <BotMessageSquare size={18} role="none" />
                                 With Discord
                             </button>
 
@@ -167,7 +167,7 @@
                                 class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg"
                                 onclick={registerAccount}
                             >
-                                <User size={18} />
+                                <User size={18} role="none" />
                                 With Username
                             </button>
 
@@ -176,7 +176,7 @@
                                 class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg"
                                 onclick={() => login(null)}
                             >
-                                <Ellipsis size={18} />
+                                <Ellipsis size={18} role="none" />
                                 With Other Provider
                             </button>
                         </div>
@@ -184,7 +184,7 @@
                     {:else}
                     <div class="m-3 rounded-lg border border-gray-200 p-4 dark:border-gray-700 text-lg">
                         <h3 class="mb-5 flex items-center justify-center gap-2 text-xl font-semibold">
-                            <Info size={20} />
+                            <Info size={20} role="none" />
                             Your Info
                         </h3>
                         <p class="py-2">
@@ -217,7 +217,7 @@
                     <!-- Profile -->
                     <div class="m-3 rounded-lg border border-gray-200 p-4 dark:border-gray-700">
                         <h3 class="mb-5 flex items-center justify-center gap-2 text-xl font-semibold">
-                            <User size={20} />
+                            <User size={20} role="none" />
                             Manage Profile
                         </h3>
 
@@ -226,7 +226,7 @@
                                 onclick={() => accountManagement()}
                                 class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg"
                             >
-                                <UserCog size={18} />
+                                <UserCog size={18} role="none" />
                                 BARS Profile
                             </button>
                             
@@ -235,7 +235,7 @@
                                 onclick={() => window.location.href = "https://win.wisc.edu/bars/"}
                                 class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg"
                             >
-                                <UsersRound size={18} />
+                                <UsersRound size={18} role="none" />
                                 Wisconsin Involvement Network
                             </button>
                         </div>
@@ -244,7 +244,7 @@
                     <!-- Log In -->
                     <div class="m-3 rounded-lg border border-gray-200 p-4 dark:border-gray-700">
                         <h3 class="mb-5 flex items-center justify-center gap-2 text-xl font-semibold">
-                            <LogIn size={18} />
+                            <LogIn size={18} role="none" />
                             Launch App
                         </h3>
 
@@ -254,7 +254,7 @@
                                     class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg"
                                     onclick={() => window.location.href = item.link}
                                 >
-                                    <ExternalLink size={18} />
+                                    <ExternalLink size={18} role="none" />
                                     {item.label}
                                 </button>
                             {/each}
