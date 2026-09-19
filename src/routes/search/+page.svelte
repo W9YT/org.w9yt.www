@@ -9,7 +9,7 @@
 	<meta name="robots" content="none" />
 </svelte:head>
 
-<div class="grid place-items-center">
+<div class="grid place-items-center" data-pagefind-ignore="all">
     <div class="self-auto pt-15">
         <Search preOpen={true}></Search>
     </div>
