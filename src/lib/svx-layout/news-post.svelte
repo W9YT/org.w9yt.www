@@ -12,6 +12,7 @@
     const isoWithOffset = date.toISOString().replace("Z", "+00:00");
 
     import Profiles from "$lib/composite/+profiles.svelte";
+	import SEO from '$lib/SEO.svelte';
 
 </script>
 
@@ -41,6 +42,11 @@
     </script>
 {:else}
 
+<SEO
+    title="{Title} | News & Events | Badger Amateur Radio Society"
+    type="Article"
+    description={Excerpt} 
+/>
 <div class="max-w-6xl mx-auto px-1">
 
     <p class="pt-10 pl-2 text-lg font-(family-name:--font-display) hidden lg:block">

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
+	import SEO from "$lib/SEO.svelte";
 	import { GraduationCap, MessageCircleMore, Mail, ArrowRightIcon } from "@lucide/svelte";
 
 </script>
@@ -12,7 +13,11 @@
 		content="Joining the Badger Amateur Radio Society"
 	/>
 </svelte:head>
-
+<SEO
+	special="join"
+    title="Joining | Badger Amateur Radio Society"
+	description="Joining the Badger Amateur Radio Society"
+/>
 
 <div class="mx-auto max-w-3xl pt-10 text-lg px-5">
 

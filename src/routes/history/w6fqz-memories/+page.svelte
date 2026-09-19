@@ -1,4 +1,6 @@
 <script lang="ts">
+	import SEO from "$lib/SEO.svelte";
+
 </script>
 
 <svelte:head>
@@ -11,6 +13,11 @@
 	<meta name="author" content="John Lemmer">
     <meta property="article:published_time" content="2007"/>
 </svelte:head>
+<SEO
+    title="W6FQX Memories | Badger Amateur Radio Society"
+	description="Some Badger Amateur Radio Society history by W6FQX"
+	type="article"
+/>
 
 
 <div class="mx-auto max-w-3xl pt-10 text-lg px-5 font-light">

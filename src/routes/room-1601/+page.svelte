@@ -1,4 +1,6 @@
 <script lang="ts">
+	import SEO from "$lib/SEO.svelte";
+
 </script>
 
 <svelte:head>
@@ -9,6 +11,11 @@
 		content="W9YT Shack information for the Badger Amateur Radio Society"
 	/>
 </svelte:head>
+<SEO
+	special="shack"
+    title="W9YT Shack | Badger Amateur Radio Society"
+	description="W9YT Shack information for the Badger Amateur Radio Society"
+/>
 
 
 <div class="mx-auto max-w-3xl pt-10 text-lg px-5">

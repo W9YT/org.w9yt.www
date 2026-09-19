@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import SiteProvider from '$lib/composite/+site-provider.svelte';
+	import SEO from '$lib/SEO.svelte';
 	import { ArrowRightIcon, Mail, Facebook, Twitter } from '@lucide/svelte';
 
 	import { Tabs } from '@skeletonlabs/skeleton-svelte';
@@ -18,6 +19,10 @@
 		content="The Badger Amateur Radio Society (BARS) is the amateur radio club at the University of Wisconsin-Madison"
 	/>
 </svelte:head>
+<SEO
+    title="Donations and Charitable Giving | Badger Amateur Radio Society"
+	description="Donating to The Badger Amateur Radio Society, the amateur radio club at the University of Wisconsin-Madison"
+/>
 
 
 <div class="mx-auto max-w-5xl pt-10 text-lg px-5">

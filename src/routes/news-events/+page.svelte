@@ -1,4 +1,6 @@
 <script lang="ts">
+	import SEO from "$lib/SEO.svelte";
+
 
 	function getPosts() {
 		const svxFiles = import.meta.glob('./**/+page.svx', { eager: true });
@@ -39,6 +41,10 @@
 		content="List of News & Events from The Badger Amateur Radio Society at the University of Wisconsin-Madison"
 	/>
 </svelte:head>
+<SEO
+    title="News & Events | Badger Amateur Radio Society"
+	description="List of News & Events from The Badger Amateur Radio Society at the University of Wisconsin-Madison"
+/>
 
 
 <!-- Content -->

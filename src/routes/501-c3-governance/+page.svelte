@@ -1,16 +1,22 @@
 <script lang="ts">
+	import SEO from "$lib/SEO.svelte";
+
 
 </script>
 
 <svelte:head>
-	<meta property="og:title" content="Leadership | Badger Amateur Radio Society" />
+	<meta property="og:title" content="501(c)(3) Governance Information | Badger Amateur Radio Society" />
 	<title>501(c)(3) Governance Information | Badger Amateur Radio Society</title>
 	<meta
 		name="description"
-		content="The Badger Amateur Radio Society (BARS) is the amateur radio club at the University of Wisconsin-Madison"
+		content="501(c)(3) non-profit information for the Badger Amateur Radio Society"
 	/>
 	
 </svelte:head>
+<SEO
+    title="501(c)(3) Governance Information | Badger Amateur Radio Society"
+    description="501(c)(3) non-profit information for the Badger Amateur Radio Society"
+/>
 
 <div class="mx-auto max-w-3xl px-5 pt-10 text-lg">
 	<h2 class="pb-10 text-4xl/9 md:text-4xl/15 font-semibold">501(c)(3) Governance Information</h2>

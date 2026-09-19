@@ -82,6 +82,7 @@
 
 <svelte:head>
 	<link rel="canonical" href="https://www.w9yt.org{page.url.pathname}">
+	<meta property="og:url" content="https://www.w9yt.org{page.url.pathname}">
 </svelte:head>
 
 <noscript>

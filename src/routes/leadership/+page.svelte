@@ -18,6 +18,7 @@
 	import So from '$lib/composite/profiles/+so.svelte';
 	import Standaert from '$lib/composite/profiles/+standaert.svelte';
 	import Stephens from '$lib/composite/profiles/+stephens.svelte';
+	import SEO from '$lib/SEO.svelte';
 
 	const years = Array.from({ length: maxYear - 2022 + 1 }, (_, i) => 2022 + i).reverse();
 </script>
@@ -30,6 +31,9 @@
 		content="The Badger Amateur Radio Society (BARS) is the amateur radio club at the University of Wisconsin-Madison"
 	/>
 </svelte:head>
+<SEO
+    title="Leadership | Badger Amateur Radio Society"
+/>
 
 <div class="mx-auto max-w-3xl px-5 pt-10 text-lg">
 	<h2 class="pb-10 text-4xl/9 md:text-4xl/15 font-semibold">Leadership</h2>
