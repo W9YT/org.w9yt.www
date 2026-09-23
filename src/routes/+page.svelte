@@ -9,6 +9,7 @@
 	import { ChevronRight } from '@lucide/svelte';
 	import { page } from '$app/state';
 	import type { HTMLAnchorAttributes } from 'svelte/elements';
+	import SEO from '$lib/SEO.svelte';
 </script>
 
 <svelte:head>
@@ -19,6 +20,7 @@
 		content="The Badger Amateur Radio Society (BARS) is the amateur radio club at the University of Wisconsin-Madison"
 	/>
 </svelte:head>
+<SEO/>
 
 <div class="overflow-hidden" style="max-height: 40vh; vertical-align: middle;">
 	<img

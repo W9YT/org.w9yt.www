@@ -4,6 +4,7 @@
 	import wizardSkip from '$lib/img/wavelog-wizard-skip-2_4_x.png';
 	import clubQSO from '$lib/img/wavelog-club-live-qso-2_4_x.png'
 	import clubSwitch from '$lib/img/wavelog-switch-2_4_x.png';
+	import SEO from '$lib/SEO.svelte';
 </script>
 
 <svelte:head>
@@ -14,6 +15,11 @@
 		content="Wavelog logbook software, provided by The Badger Amateur Radio Society"
 	/>
 </svelte:head>
+<SEO
+	special="wavelog"
+    title="Wavelog | Badger Amateur Radio Society"
+	description="Wavelog logbook software, provided by The Badger Amateur Radio Society"
+/>
 
 <div class="mx-auto max-w-3xl px-5 pt-10 text-lg">
 	<h2 class="pb-10 text-4xl/9 font-semibold md:text-4xl/15">Wavelog Logbook</h2>

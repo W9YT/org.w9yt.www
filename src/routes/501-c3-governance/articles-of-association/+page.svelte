@@ -1,9 +1,11 @@
 <script lang="ts">
+	import SEO from "$lib/SEO.svelte";
+
 
 </script>
 
 <svelte:head>
-	<meta property="og:title" content="Leadership | Badger Amateur Radio Society" />
+	<meta property="og:title" content="Articles of Association of Badger Amateur Radio Society | Badger Amateur Radio Society" />
 	<title>Articles of Association of Badger Amateur Radio Society | Badger Amateur Radio Society</title>
 	<meta
 		name="description"
@@ -11,6 +13,10 @@
 	/>
 	
 </svelte:head>
+<SEO
+    title="Articles of Association of Badger Amateur Radio Society | Badger Amateur Radio Society"
+    description="Text of the Articles of Association of Badger Amateur Radio Society for 501(c)(3) governance"
+/>
 
 <div class="mx-auto max-w-3xl px-5 pt-10 text-lg">
 	<h2 class="pb-10 text-4xl/9 md:text-4xl/15 font-semibold">Articles of Association</h2>

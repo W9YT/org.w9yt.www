@@ -1,4 +1,6 @@
 <script lang="ts">
+	import SEO from "$lib/SEO.svelte";
+
 </script>
 
 <svelte:head>
@@ -11,6 +13,11 @@
 	<meta name="author" content="Steve Dubberstein" />
 	<meta property="article:published_time" content="1983-04-15T09:30:00.000+00:00" />
 </svelte:head>
+<SEO
+    title="Founding of W9YT (Dubberstein) | Badger Amateur Radio Society"
+	description="The founding of W9YT from the 1983 issue of The Badger State Smoke Signals"
+	type="article"
+/>
 
 <div class="mx-auto max-w-3xl px-5 pt-10 text-lg font-light">
 	<h2 class="pb-10 text-4xl/9 md:text-4xl/15 font-semibold">Founding of W9YT</h2>

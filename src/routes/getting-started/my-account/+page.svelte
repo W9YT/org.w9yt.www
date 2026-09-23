@@ -1,6 +1,7 @@
 <script>
 	import { accountManagement, login, registerAccount } from '$lib/auth/auth';
 	import IamSupport from '$lib/composite/+iam-support.svelte';
+	import SEO from '$lib/SEO.svelte';
 	import { ChevronRight } from '@lucide/svelte';
 	import { Menu, Portal } from '@skeletonlabs/skeleton-svelte';
 </script>
@@ -8,9 +9,13 @@
 <svelte:head>
 	<meta property="og:title" content="My BARS Account | Badger Amateur Radio Society" />
 	<title>My BARS Account | Badger Amateur Radio Society</title>
-	<meta name="description" content="My BARS Account | Badger Amateur Radio Society" />
+	<meta name="description" content="Your BARS W9YT Profile, how to create and update your account" />
 	<meta name="robots" content="none" />
 </svelte:head>
+<SEO
+    title="My BARS Account | Badger Amateur Radio Society"
+	description="Your BARS W9YT Profile, how to create and update your account"
+/>
 
 <div class="mx-auto max-w-3xl px-5 pt-10 text-lg">
 	<h2 class="pb-10 text-4xl/9 font-semibold md:text-4xl/15">Your BARS Account & Profile</h2>

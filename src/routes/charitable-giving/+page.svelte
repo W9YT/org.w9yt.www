@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SEO from "$lib/SEO.svelte";
 	import { ArrowRightIcon } from "@lucide/svelte";
 
 </script>
@@ -11,6 +12,11 @@
 		content="Donating to The Badger Amateur Radio Society, the amateur radio club at the University of Wisconsin-Madison"
 	/>
 </svelte:head>
+<SEO
+	special="donate"
+    title="Donations and Charitable Giving | Badger Amateur Radio Society"
+	description="Donating to The Badger Amateur Radio Society, the amateur radio club at the University of Wisconsin-Madison"
+/>
 
 <div class="mx-auto max-w-3xl px-5 pt-10 text-lg">
 	<h2 class="pb-10 text-4xl/9 md:text-4xl/15 font-semibold">Donations and Charitable Giving</h2>

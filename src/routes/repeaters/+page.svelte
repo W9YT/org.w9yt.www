@@ -1,5 +1,6 @@
 <script lang="ts">
     import splatMap from '$lib/img/splat2m.png'
+	import SEO from '$lib/SEO.svelte';
 </script>
 
 <svelte:head>
@@ -10,6 +11,10 @@
 		content="Information about Madison area repeaters run by the Badger Amateur Radio Society"
 	/>
 </svelte:head>
+<SEO
+    title="Repeaters W9YT | Badger Amateur Radio Society"
+	description="Information about Madison area repeaters run by the Badger Amateur Radio Society"
+/>
 
 
 <div class="mx-auto max-w-3xl pt-10 text-lg px-5">

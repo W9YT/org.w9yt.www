@@ -1,18 +1,22 @@
 <script lang="ts">
 	import urn2528 from '$lib/assets/pages/com.hadleyso.qsla-URN2528.png';
 	import urn1087 from '$lib/assets/pages/com.hadleyso.qsla-URN1087.png';
+	import SEO from '$lib/SEO.svelte';
 
 </script>
 
 <svelte:head>
-	<meta property="og:title" content="Joining | Badger Amateur Radio Society" />
+	<meta property="og:title" content="What is Ham Radio | Badger Amateur Radio Society" />
 	<title>What is Ham Radio | Badger Amateur Radio Society</title>
 	<meta
 		name="description"
-		content="What is Ham Radio"
+		content="What is Ham Radio, a brief overview and explainer of what Ham radio is"
 	/>
 </svelte:head>
-
+<SEO
+    title="What is Ham Radio | Badger Amateur Radio Society"
+	description="What is Ham Radio, a brief overview and explainer of what Ham radio is"
+/>
 
 <div class="mx-auto max-w-2xl pt-10 text-lg px-5">
 
