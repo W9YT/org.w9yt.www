@@ -61,7 +61,7 @@
                     <h3 class="font-medium text-xl pt-6">
                         Service Provider
                     </h3>
-                    <p class="pt-2">
+                    <p class="pt-2" data-pagefind-ignore="all">
                         Hadley So <br>
                         United States <br>
                         <a href="mailto:webmaster@w9yt.org">webmaster@w9yt.org</a> <br>

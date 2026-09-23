@@ -2,8 +2,7 @@
 	import { goto } from '$app/navigation';
 	import menuSidebarData from '$lib/menus/global-sidebar.json';
 	import { Menu as SvelteMenu, X, ArrowLeft, SearchIcon } from '@lucide/svelte';
-	import { AppBar } from '@skeletonlabs/skeleton-svelte';
-	import { onMount } from 'svelte';
+    import MenuBarComponent from '$lib/composite/MenuBarComponent/+page.svelte'
 	import { fade, slide } from 'svelte/transition';
 	import Search from '$lib/composite/search/+page.svelte'
 
@@ -16,14 +15,6 @@
 		authError
 	} from '$lib/auth/auth';
 
-	onMount(() => {
-        const handler = (e: { key: string; }) => {
-            if (e.key === 'Escape') menuClose();
-            if (e.key === 'm') isOpen = true;
-        };
-        window.addEventListener('keydown', handler);
-        return () => window.removeEventListener('keydown', handler);
-    });
 	let column2 = $state("");
 	let column2title = $state("");
 	let column2done = $state(true);
@@ -100,33 +91,7 @@
 <!-- Fullscreen Menu Overlay -->
 {#if isOpen}
 	<div data-nosnippet class="fixed inset-0 z-50 flex flex-col bg-white dark:bg-black" transition:slide={{ axis: 'y', duration: 300 }}>
-		<AppBar class="sticky top-0 z-5">
-			<AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
-				<AppBar.Lead>
-					<a href="." class="" onclick={() => menuClose()}>
-						<p
-							class="px-2 font-(family-name:--font-display) text-2xl font-semibold tracking-widest"
-						>
-							W9YT
-						</p>
-						<p class="px-2 font-(family-name:--font-display) text-xs font-medium">
-							Badger Amateur Radio Society
-						</p>
-					</a>
-				</AppBar.Lead>
-
-				<AppBar.Trail>
-					<!-- Close Button -->
-					<button
-						class="absolute top-4 right-4 rounded-md p-2 transition-colors hover:bg-surface-200-800"
-						onclick={() => menuClose()}
-						aria-label="Close menu"
-					>
-						<X class="size-7" role="none" />
-					</button>
-				</AppBar.Trail>
-			</AppBar.Toolbar>
-		</AppBar>
+		<MenuBarComponent menuClose={() => isOpen = false} />
 
 		<!-- Menu Content -->
 		<nav class="flex h-[calc(100vh-80px)] space-y-8 text-2xl md:text-3xl font-semibold" >

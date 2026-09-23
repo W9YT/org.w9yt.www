@@ -35,7 +35,7 @@
 		Meetings for Fall 2026 are on the second and fourth Tuesday of each month, from 6PM to 8PM in <a class="underline" href="/room-1601/">the Shack</a>.
 		On Tuesdays without meetings, we will be having an open shack time from 6PM to 8PM.
 	</p>
-	<a href="https://win.wisc.edu/organization/bars" target="_blank">
+	<a href="https://win.wisc.edu/bars/" target="_blank">
 		<button type="button" class="btn preset-filled mt-1">
 			<span>WISC WIN</span>
 			<GraduationCap size={18} role="none"/>

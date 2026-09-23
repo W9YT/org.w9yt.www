@@ -90,7 +90,7 @@
                         {/if}
   
                         {#if email.length > 0 || phone.length > 0}
-                        <div class="flex flex-wrap items-center gap-4">
+                        <div class="flex flex-wrap items-center gap-4" data-pagefind-ignore="all">
                             {#if email.length > 0}
                                 {#each emailList as emailAddress}
                                     <a href="mailto:{emailAddress}" class="flex-none">
