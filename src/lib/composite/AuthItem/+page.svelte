@@ -65,7 +65,7 @@
 	});
 </script>
 {#if !$initialized}
-    <div class="placeholder size-8 animate-pulse [animation-duration:1s] hidden sm:block w-28 justify-center"></div>
+    <div class="placeholder size-8 animate-pulse [animation-duration:1s] hidden sm:block w-28 justify-center hidden sm:block"></div>
 {:else if $authError}
     <div class="rounded-md p-2 px-3 transition-colors hover:bg-surface-200-800 hidden sm:block">
 
@@ -109,7 +109,7 @@
 {:else if $authenticated}
 
     <button
-        class="rounded-md p-2 transition-colors hover:bg-surface-200-800"
+        class="rounded-md p-2 transition-colors hover:bg-surface-200-800 hidden sm:block"
         onclick={() => (isOpen = true)}
         aria-label="Open menu"
     >
@@ -121,7 +121,7 @@
 
 {:else}
     <button
-        class="rounded-md p-2 transition-colors hover:bg-surface-200-800"
+        class="rounded-md p-2 transition-colors hover:bg-surface-200-800 hidden sm:block"
         onclick={() => (isOpen = true)}
         aria-label="Open menu"
     >
@@ -135,7 +135,7 @@
 {#if isOpen}
     <div
         data-nosnippet
-        class="fixed inset-0 z-50 flex flex-col bg-white dark:bg-black"
+        class="fixed inset-0 z-50 flex flex-col bg-white dark:bg-black max-h-screen overflow-y-scroll scrollbarHide"
         transition:slide={{ axis: 'y', duration: 300 }}
     >
         <MenuBarComponent menuClose={() => isOpen = false} />
@@ -167,7 +167,7 @@
                         <div class="space-y-2">
                             <button
                                 value="registerDiscord"
-                                class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg"
+                                class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg text-left"
                                 onclick={() => login('discord-il')}
                             >
                                 <BotMessageSquare size={18} role="none" />
@@ -176,7 +176,7 @@
 
                             <button
                                 value="registerUsername"
-                                class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg"
+                                class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg text-left"
                                 onclick={registerAccount}
                             >
                                 <User size={18} role="none" />
@@ -185,7 +185,7 @@
 
                             <button
                                 value="registerOther"
-                                class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg"
+                                class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg text-left"
                                 onclick={() => login(null)}
                             >
                                 <Ellipsis size={18} role="none" />
@@ -236,7 +236,7 @@
                         <div class="space-y-2">
                             <button
                                 onclick={() => accountManagement()}
-                                class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg"
+                                class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg text-left"
                             >
                                 <UserCog size={18} role="none" />
                                 BARS Profile
@@ -245,7 +245,7 @@
                             <button
                                 value="profile"
                                 onclick={() => window.location.href = "https://win.wisc.edu/bars/"}
-                                class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg"
+                                class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg text-left"
                             >
                                 <UsersRound size={18} role="none" />
                                 Wisconsin Involvement Network
@@ -263,7 +263,7 @@
                         <div class="space-y-2">
                             {#each menuLoginData as item}
                                 <button
-                                    class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg"
+                                    class="flex w-full items-center gap-2 rounded-md px-3 py-2 hover:bg-surface-200-800 font-normal text-lg text-left"
                                     onclick={() => window.location.href = item.link}
                                 >
                                     <ExternalLink size={18} role="none" />

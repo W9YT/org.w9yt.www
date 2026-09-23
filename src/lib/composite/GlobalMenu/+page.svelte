@@ -131,7 +131,7 @@
 									<span transition:fade={{ duration: 200 }} class="my-auto">
 										<SearchIcon class="size-6 my-auto" aria-hidden="true" />
 									</span>
-									Search Wiki
+									Search
 								</div>
 							</Search> 
 						</div>
