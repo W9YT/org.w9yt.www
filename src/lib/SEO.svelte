@@ -16,7 +16,7 @@
 	} = $props();
 
 
-	var buttonItems = $derived([
+	var buttonItems = [
 		{
 			"type": 1,
 			"components": [
@@ -38,25 +38,34 @@
 			"components": [
 				{
 					type: 2,  // ComponentType.BUTTON
-					style: 2, // Secondary
+					style: 5, // LINK
 					label: "MyBARS",
-					url: "https://w9yt.org/.well-known/change-password"
+					url: "https://w9yt.org/.well-known/change-password",
+					emoji: {
+						name: "👤"
+					}
 				},
 				{
 					type: 2,  // ComponentType.BUTTON
-					style: 2, // Secondary
+					style: 5, // LINK
 					label: "Launch Wavelog",
-					url: "https://w9yt.org/?discord-component-embed=wavelog"
+					url: "https://w9yt.org/?discord-component-embed=wavelog",
+					emoji: {
+						name: "🎙"
+					}
 				},
 				{
 					type: 2,  // ComponentType.BUTTON
-					style: 2, // Secondary
+					style: 5, // LINK
 					label: "Launch Wiki",
-					url: "https://w9yt.org/?discord-component-embed=wiki"
+					url: "https://w9yt.org/?discord-component-embed=wiki",
+					emoji: {
+						name: "📖"
+					}
 				},
 			]
 		},
-	])
+	]
 
 	// svelte-ignore state_referenced_locally
 	if (special == "wavelog") {
@@ -68,13 +77,19 @@
 						type: 2,  // ComponentType.BUTTON
 						label: "Read About Wavelog",
 						style: 5, // LINK
-						url: `https://www.w9yt.org${page.url.pathname}`
+						url: `https://www.w9yt.org${page.url.pathname}`,
+						emoji: {
+							name: "📄"
+						}
 					},
 					{
 						type: 2,  // ComponentType.BUTTON
 						style: 5, // LINK
 						label: "Launch Wavelog",
-						url: "https://w9yt.org/?discord-component-embed=wavelog"
+						url: "https://w9yt.org/?discord-component-embed=wavelog",
+						emoji: {
+							name: "🎙"
+						}
 					},
 				]
 			}
@@ -102,19 +117,28 @@
 						type: 2,  // ComponentType.BUTTON
 						label: "Google Maps Walking Directions",
 						style: 5, // LINK
-						url: `https://maps.google.com/?daddr=43.072608761834815,-89.41162469216303&dirflg=w`
+						url: `https://maps.google.com/?daddr=43.072608761834815,-89.41162469216303&dirflg=w`,
+						emoji: {
+							name: "👟"
+						}
 					},
 					{
 						type: 2,  // ComponentType.BUTTON
 						label: "Google Maps Transit Directions",
 						style: 5, // LINK
-						url: `https://maps.google.com/?daddr=43.072608761834815,-89.41162469216303&dirflg=r`
+						url: `https://maps.google.com/?daddr=43.072608761834815,-89.41162469216303&dirflg=r`,
+						emoji: {
+							name: "🚌"
+						}
 					},
 					{
 						type: 2,  // ComponentType.BUTTON
 						label: "Finding the Shack",
 						style: 5, // LINK
-						url: `https://www.w9yt.org${page.url.pathname}`
+						url: `https://www.w9yt.org${page.url.pathname}`,
+						emoji: {
+							name: "🏢"
+						}
 					},
 
 				]
@@ -149,10 +173,21 @@
 		accent_color: null,
 		components: [
 			{
-				type: 10,
-				content: `# ${title}\n\n${description}`
-			},
-			buttonItems
+				type: 9,
+				components: [
+					{
+						type: 10,
+						content: `# ${title}\n\n${description}`
+					}
+				],
+				"accessory": {
+					type: 11,  // ComponentType.THUMBNAIL
+					media: {
+						url: "https://www.w9yt.org/assets/favicon/ms-icon-150x150.png"
+					}
+				}
+            },
+			...buttonItems
 		]
 		}
 	});
