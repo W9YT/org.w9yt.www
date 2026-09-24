@@ -21,6 +21,8 @@
 
 	let col2class = $derived(column2 ? "md:border-r border-neutral-300 dark:border-neutral-700" : "");
 
+	let isSearchBarActive = $state(false);
+
 	const menuNavigate = (path: string) => {
 		if (path.startsWith("http")) {
 			window.location.href = path;
@@ -74,6 +76,11 @@
 		column2title = col2;
 	}
 
+	$effect(() => {
+		if (!isSearchBarActive) {
+			isOpen = false;
+		}
+	});
 
 </script>
 
@@ -126,7 +133,7 @@
 					{/each}
 					<div class="border-b md:border-b-0 border-neutral-300 dark:border-neutral-700 w-full pr-2">
 						<div class="w-full p-3 px-7 m-1 hover:bg-(--theme-red-100)/50 rounded-2xl text-left whitespace-nowrap overflow-hidden">
-							<Search fullScreen="true" aria-label="Search W9YT" buttonIconClass="p-0 w-full">
+							<Search fullScreen="true" aria-label="Search W9YT" buttonIconClass="p-0 w-full" bind:isActive={isSearchBarActive} >
 								<div class="text-2xl md:text-3xl font-semibold flex gap-3 w-full">
 									<span transition:fade={{ duration: 200 }} class="my-auto">
 										<SearchIcon class="size-6 my-auto" aria-hidden="true" />

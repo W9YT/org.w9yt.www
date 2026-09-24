@@ -85,6 +85,10 @@
             {
                 "text": "CampusLabs",
                 "link": "https://win.wisc.edu/bars/"
+            },
+            {
+                "text": "Logout and Clear Session",
+                "link": "https://w9yt.org/IETF-Clear-Site-Data-cookies"
             }
         ]
     },
