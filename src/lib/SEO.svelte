@@ -151,7 +151,7 @@
 				"components": [
 					{
 						type: 2,  // ComponentType.BUTTON
-						style: 1, // PRIMARY
+						style: 5, // LINK
 						label: "Discord Server",
 						url: "https://discord.gg/bZezMYCH9J"
 					},
