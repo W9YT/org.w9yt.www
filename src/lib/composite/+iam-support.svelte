@@ -28,11 +28,22 @@
 					</Dialog.CloseTrigger>
 				</section>
 				<Dialog.Description>
-
-                    <So position="IAM Support"/>
-                    <p class="pt-2 pl-4" data-nosnippet>
-                        Please email the w9yt.org address provided in the profile above
+                    <p class="pt-2 pl-2 lg:pl-4" data-nosnippet>
+						Please <a href=".#" onclick={e => location.href="https://www.w9yt.org/.well-known/global-service-support"} class="underline">open a ticket</a> under "Logins and Accounts". Your account must be at least 24 hours old to open a ticket
+					</p>
+					<button type="button" class="ml-4 btn btn-md preset-filled-surface-200-800 mt-1 inline-block" onclick={e => location.href="https://www.w9yt.org/.well-known/global-service-support"}>
+						<span class="text-md">
+							Open a ticket
+						</span>
+						<!-- <Mail size={12} role="none" /> -->
+					</button>
+					<p class="pt-2 pl-2 lg:pl-4" data-nosnippet>
+                        Otherwise, email the w9yt.org address provided in the profile below
                     </p>
+                    <div class="ml-2">
+						<So position="IAM Support"/>
+					</div>
+
 				</Dialog.Description>
 				<section class="flex justify-end gap-2">
 					<Dialog.CloseTrigger class="btn preset-tonal">Close</Dialog.CloseTrigger>
