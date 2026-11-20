@@ -109,12 +109,17 @@
 
 
 					{#if $authenticated && !$authError}
-						<div class="border-b md:border-b-0 border-neutral-300 dark:border-neutral-700 w-full pr-2 py-2 md:hidden">
-							<button class="w-full p-3 px-7 m-1 hover:bg-(--theme-red-100)/50 rounded-2xl text-left whitespace-nowrap overflow-hidden" onclick={logout}>
+						<div class="border-b md:border-b-0 border-neutral-300 dark:border-neutral-700 w-full px-2 py-2 md:hidden">
+							<button class="w-full p-3 px-7 mt-1 hover:bg-(--theme-red-100)/50 rounded-2xl text-left whitespace-nowrap overflow-hidden" onclick={logout}>
 								Welcome, {$user?.name}
 								<br>
 								<span class="text-base font-light">
 									To log out, tap here
+								</span>
+							</button>
+							<button class="w-full p-1 px-7 mb-1 hover:bg-(--theme-red-100)/50 rounded-2xl text-left whitespace-nowrap overflow-hidden" onclick={e => location.href="https://www.w9yt.org/.well-known/global-service-support"}>
+								<span class="text-base font-light">
+									Tap here to open a support ticket
 								</span>
 							</button>
 						</div>
