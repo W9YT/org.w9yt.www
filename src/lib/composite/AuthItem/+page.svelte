@@ -93,8 +93,8 @@
                                 </p>
                                 <br>
                                 <p>
-                                    To log out, visit <button class="underline" onclick={() => accountManagement()}>manage account</button>,
-                                    select your name from the top right, then click 'Sign out'.
+                                    To log out, <button class="underline" onclick={() => logout()}>click here</button>.
+                                    You may need to confirm by clicking 'Sign out'.
                                 </p>
                             </Popover.Description>
                         </div>
@@ -150,6 +150,8 @@
                         Welcome, {$user?.name} 
                         <br>
                         <button onclick={logout} class="rounded-md px-3 py-2 hover:bg-surface-200-800 text-lg mt-2">Log Out</button>
+                        <button onclick={e => location.href="https://www.w9yt.org/.well-known/global-service-support"} class="rounded-md px-3 py-2 hover:bg-warning-200-800 text-lg mt-2 font-normal">Get Support</button> 
+
                     {:else}
                         <button onclick={() => login(null)} class="rounded-md px-3 py-2 hover:bg-surface-200-800 text-lg mt-2 bg-surface-100-900">Log In to W9YT.org</button>
                     {/if}
